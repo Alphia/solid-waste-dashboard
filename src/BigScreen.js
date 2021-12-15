@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import React from "react";
-import {Left, Middle, Right} from './components/styled'
 import Top from './components/Top';
 import bg from "./img/bg.jpg";
+import Left from "./components/Left";
 
 function BigScreen(props) {
     const {className} = props;

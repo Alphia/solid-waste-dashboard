@@ -1,9 +1,9 @@
 import React from 'react';
-import {useState} from 'react';
+import styled from "styled-components"
 import ReactECharts from 'echarts-for-react'
 import DataContext from '../DataContext';
 
-export default function (props) {
+ function HalfYearReport (props) {
 
     const {className} = props;
     const data = React.useContext(DataContext);
@@ -65,7 +65,6 @@ export default function (props) {
     return (
         <div className={className}>
             <ReactECharts
-
                 option={option}
                 theme='walden'
                 style={{height:'400px'}}
@@ -73,3 +72,8 @@ export default function (props) {
         </div>
     );
 }
+
+export default styled(HalfYearReport)`
+    height: 800px;
+    width: 800px;
+`
