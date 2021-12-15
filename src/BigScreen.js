@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import React from "react";
-import {Top, Left, Middle, Right} from './components/styled'
+import {Left, Middle, Right} from './components/styled'
+import Top from './components/Top';
 import bg from "./img/bg.jpg";
 
 function BigScreen(props) {
@@ -8,7 +9,7 @@ function BigScreen(props) {
 
     return (
         <div id='bs' className={className}>
-            {/*<Top></Top>*/}
+            <Top></Top>
             <Left>
 
             </Left>
