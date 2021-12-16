@@ -3,7 +3,7 @@ import styled from "styled-components"
 import ReactECharts from 'echarts-for-react'
 import DataContext from '../DataContext';
 
- function HalfYearReport (props) {
+ function Past6MonthsReport (props) {
 
     const {className} = props;
     const data = React.useContext(DataContext);
@@ -67,13 +67,13 @@ import DataContext from '../DataContext';
             <ReactECharts
                 option={option}
                 theme='walden'
-                style={{height:'400px'}}
+                // style={{height:'100%'}}
             />
         </div>
     );
 }
 
-export default styled(HalfYearReport)`
-    height: 800px;
-    width: 800px;
+export default styled(Past6MonthsReport)`
+    //width: 100%;
+    height: 33%;
 `

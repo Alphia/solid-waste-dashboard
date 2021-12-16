@@ -1,18 +1,16 @@
-import styled from "styled-components"
 import React from "react";
-import HalfYearReport from "./HalfYearReport";
+import Past6MonthsReport from "./Past6MonthsReport";
+import ThisYearReport from "./ThisYearReport";
 
-function Left2(props) {
-
-    const {className} = props;
+function Left(props) {
 
     return (
-        <div className={className}>
-            <HalfYearReport/>
-        </div>
+        <>
+            <ThisYearReport/>
+            <Past6MonthsReport/>
+        </>
     )
 }
 
-
 // export default styled(Left2)
-export default Left2
+export default Left;

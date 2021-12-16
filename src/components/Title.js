@@ -10,15 +10,14 @@ export const Title = styled((props) => {
         </div>
     )
 })`
-position: relative;
-    top: 0.6rem;
+    margin-top: 0.6rem;
+    padding-bottom: 0.5rem;
     width: 100%;
-    height: 6rem;
     background: url(${topBg}) no-repeat;
     background-size: 100%;
     text-align: center;
-    line-height: 4.4rem;
+    line-height: 4rem;
     color: #0efcff;
     font-size: 1.7rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
 `;

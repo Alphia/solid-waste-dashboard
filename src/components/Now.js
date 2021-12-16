@@ -10,9 +10,8 @@ export const Now = styled((props) => {
     )
 })`
   color: #0efcff;
-  margin-top: -3rem;
+  margin-top: -4rem;
   float: left;
   width: 25%;
   margin-left:10rem;
-  height: 100%;
 `;
