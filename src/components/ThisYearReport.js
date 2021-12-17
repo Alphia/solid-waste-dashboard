@@ -1,22 +1,16 @@
 import React from 'react';
 import styled from "styled-components"
 import DataContext from '../DataContext';
-import {Col, Row, Typography} from 'antd';
+import {Col, Row} from 'antd';
 import "antd/dist/antd.css";
 import leftBg from '../img/left_header2.png'
-
-const ReportHeader = styled(Typography)`
-    font-size: 1.4rem;
-    color: #fff;
-    padding-left: 5%;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-`;
+import {ReportHeader, Tail, TailContent, TailHeader} from "./LeftBlock";
 
 const ReportGrid = styled(Row)`
     width: 90%;
     padding-right: 10%;
     float: right;
+    height: 60%;
 `;
 
 const ReportCol = styled(Col)`
@@ -43,21 +37,6 @@ const Number = styled.div`
     width: 40%;
     font-size: 1.5rem;
     border-left: #fff 1px solid;
-`;
-
-const Tail = styled.div`
-    color: #fff;
-`;
-
-const TailHeader =styled.div`
-    padding-left: 48%;
-    font-size: 1rem;
-`;
-
-const TailContent =styled.div`
-    width: 85%;
-    padding-left: 15%;
-    font-size: 0.8rem;
 `;
 
 function ThisYearReport(props) {
@@ -154,7 +133,8 @@ function ThisYearReport(props) {
 }
 
 export default styled(ThisYearReport)`
-    height: 33%;
+    height: 32.3%;
+    margin-bottom: 1%;
     background: url(${leftBg}) no-repeat;
     background-size:100% 100%;
 `

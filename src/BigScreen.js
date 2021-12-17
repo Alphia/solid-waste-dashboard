@@ -20,6 +20,14 @@ const MyLayout = styled(Layout)({
     'background':'none'
 });
 
+const MySider = styled(Sider)({
+    'height':'100%',
+    // 'padding-left':'0.5%',
+    // 'padding-right':'0.5%',
+    'background':'none'
+});
+
+
 function BigScreen(props) {
     const {className} = props;
 
@@ -30,9 +38,9 @@ function BigScreen(props) {
                     <Top/>
                 </MyHeader>
                 <MyLayout>
-                    <Sider width={'28%'}>
+                    <MySider width={'28%'}>
                         <Left/>
-                    </Sider>
+                    </MySider>
                     <Content width={'44%'}>
                     </Content>
                     <Sider width={'28%'}>
