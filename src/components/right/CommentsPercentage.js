@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from "styled-components"
-import ReactECharts from 'echarts-for-react'
-import DataContext from '../DataContext';
-import {RightReportHeader} from "./Block";
-import right from "../img/right.png";
-import {Col, Row} from "antd";
+import ReactECharts from 'echarts-for-react/lib/index'
+import DataContext from '../../DataContext';
+import {RightReportHeader} from "../Block";
+import right from "../../img/right.png";
+import {Col, Row} from "antd/lib/index";
 import "antd/dist/antd.css";
 
 const LabelGrid = styled(Row)`

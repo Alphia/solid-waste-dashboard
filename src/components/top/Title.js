@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import topBg from "../img/top.png";
+import topBg from "../../img/top.png";
 import React from "react";
 
 export const Title = styled((props) => {

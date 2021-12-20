@@ -1,11 +1,11 @@
 import styled from "styled-components"
 import React from "react";
-import Top from './components/Top';
+import Top from './components/top/Top';
 import bg from "./img/bg.jpg";
-import Left from "./components/Left";
+import Left from "./components/left/Left";
 import "antd/dist/antd.css";
 import { Layout } from 'antd';
-import Right from "./components/Right";
+import Right from "./components/right/Right";
 const { Header, Sider, Content } = Layout;
 
 const MyHeader = styled(Header)`

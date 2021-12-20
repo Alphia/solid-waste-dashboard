@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from "styled-components"
-import DataContext from '../DataContext';
-import {Col, Row} from 'antd';
+import DataContext from '../../DataContext';
+import {Col, Row} from 'antd/lib/index';
 import "antd/dist/antd.css";
-import rightBg from '../img/right_header2.png'
-import {RightReportHeader, Tail, TailContent, TailHeader} from "./Block";
+import rightBg from '../../img/right_header2.png'
+import {RightReportHeader, Tail, TailContent, TailHeader} from "../Block";
 
 const ReportGrid = styled(Row)`
     width: 90%;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import Distribution from "./Distribution";
+import Distribution from "../left/Distribution";
 import PeopleComment from "./PeopleComment";
 import CommentsPercentage from "./CommentsPercentage";
 

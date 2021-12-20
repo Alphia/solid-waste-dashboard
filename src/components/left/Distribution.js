@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from "styled-components"
-import ReactECharts from 'echarts-for-react'
-import DataContext from '../DataContext';
-import {ReportHeader} from "./Block";
-import left from "../img/left.png";
+import ReactECharts from 'echarts-for-react/lib/index'
+import DataContext from '../../DataContext';
+import {ReportHeader} from "../Block";
+import left from "../../img/left.png";
 
 function Distribution(props) {
 
