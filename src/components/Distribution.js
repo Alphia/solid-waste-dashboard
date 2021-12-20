@@ -2,8 +2,8 @@ import React from 'react';
 import styled from "styled-components"
 import ReactECharts from 'echarts-for-react'
 import DataContext from '../DataContext';
-import {ReportHeader, Tail, TailContent, TailHeader} from "./LeftBlock";
-import leftBg from "../img/left_header2.png";
+import {ReportHeader} from "./LeftBlock";
+import left from "../img/left.png";
 
 function Distribution(props) {
 
@@ -11,12 +11,9 @@ function Distribution(props) {
     const data = React.useContext(DataContext);
     const extractOption = data => {
         return {
-            legend: {
-                data: ['Allocated Budget', 'Actual Spending']
-            },
             backgroundColor: 'transparent',
             grid: {
-                left: '25%',
+                left: '10%',
                 right: '10%',
                 bottom: '3%',
                 width:'150px',
@@ -25,28 +22,26 @@ function Distribution(props) {
             },
             radar: {
                 shape: 'polygon',
+                startAngle: 60,
+                axisName:{
+                    fontSize:'1rem'
+                },
                 indicator: [
-                    { name: 'Sales', max: 6500 },
-                    { name: 'Administration', max: 16000 },
-                    { name: 'Information Technology', max: 30000 },
-                    { name: 'Customer Support', max: 38000 },
-                    { name: 'Development', max: 52000 },
-                    { name: 'Marketing', max: 25000 }
+                    { name: '自治事务', max: 6500 },
+                    { name: '财务公开', max: 16000 },
+                    { name: '财政公开', max: 30000 },
+                    { name: '工作动态', max: 38000 },
+                    { name: '便民服务', max: 52000 },
+                    { name: '政务公开', max: 25000 }
                 ]
             },
             series: [
                 {
-                    name: 'Budget vs spending',
                     type: 'radar',
                     data: [
                         {
                             value: [4200, 3000, 20000, 35000, 50000, 18000],
-                            name: 'Allocated Budget'
                         },
-                        {
-                            value: [5000, 14000, 28000, 26000, 42000, 21000],
-                            name: 'Actual Spending'
-                        }
                     ]
                 }
             ]
@@ -64,15 +59,9 @@ function Distribution(props) {
             <ReactECharts
                 option={option}
                 theme='dark'
-                style={{height: '60%'}}
+                style={{height: '80%'}}
                 className={`background: none;`}
             />
-            <Tail>
-                <TailHeader>说明</TailHeader>
-                <TailContent>
-                    已发布、已公示信息包含各镇、村所发布信息，月平均为已发布平均数，月发布为公示平均数
-                </TailContent>
-            </Tail>
         </div>
     );
 }
@@ -80,6 +69,6 @@ function Distribution(props) {
 export default styled(Distribution)`
     height: 32.3%;
     margin-bottom: 1%;
-    background: url(${leftBg}) no-repeat;
+    background: url(${left}) no-repeat;
     background-size:100% 100%;
 `;

@@ -4,6 +4,7 @@ import ReactECharts from 'echarts-for-react'
 import DataContext from '../DataContext';
 import {ReportHeader, Tail, TailContent, TailHeader} from "./LeftBlock";
 import leftBg from "../img/left_header2.png";
+import left from "../img/left.png";
 
 function Past6MonthsReport(props) {
 
@@ -24,7 +25,7 @@ function Past6MonthsReport(props) {
                 fontSize: 16
             },
             grid: {
-                left: '15%',
+                left: '10%',
                 right: '10%',
                 // height: '80%',
                 bottom: '3%',
@@ -76,15 +77,9 @@ function Past6MonthsReport(props) {
             <ReactECharts
                 option={option}
                 theme='dark'
-                style={{height: '60%', overflow: 'show'}}
+                style={{height: '78%', overflow: 'show'}}
                 className={`background: none;`}
             />
-            <Tail>
-                <TailHeader>说明</TailHeader>
-                <TailContent>
-                    已发布、已公示信息包含各镇、村所发布信息，月平均为已发布平均数，月发布为公示平均数
-                </TailContent>
-            </Tail>
         </div>
     );
 }
@@ -92,6 +87,6 @@ function Past6MonthsReport(props) {
 export default styled(Past6MonthsReport)`
     height: 32.3%;
     margin-bottom: 1%;
-    background: url(${leftBg}) no-repeat;
+    background: url(${left}) no-repeat;
     background-size:100% 100%;
 `;
