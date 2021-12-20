@@ -5,6 +5,7 @@ import bg from "./img/bg.jpg";
 import Left from "./components/Left";
 import "antd/dist/antd.css";
 import { Layout } from 'antd';
+import Right from "./components/Right";
 const { Header, Sider, Content } = Layout;
 
 const MyHeader = styled(Header)`
@@ -43,8 +44,9 @@ function BigScreen(props) {
                     </MySider>
                     <Content width={'48%'}>
                     </Content>
-                    <Sider width={'26%'}>
-                    </Sider>
+                    <MySider width={'26%'}>
+                        <Right></Right>
+                    </MySider>
                 </MyLayout>
             </MyLayout>
         </div>

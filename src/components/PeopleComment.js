@@ -3,8 +3,8 @@ import styled from "styled-components"
 import DataContext from '../DataContext';
 import {Col, Row} from 'antd';
 import "antd/dist/antd.css";
-import leftBg from '../img/left_header2.png'
-import {ReportHeader, Tail, TailContent, TailHeader} from "./Block";
+import rightBg from '../img/right_header2.png'
+import {RightReportHeader, Tail, TailContent, TailHeader} from "./Block";
 
 const ReportGrid = styled(Row)`
     width: 90%;
@@ -39,7 +39,7 @@ const Number = styled.div`
     border-left: #fff 1px solid;
 `;
 
-function ThisYearReport(props) {
+function PeopleComment(props) {
 
     const {className} = props;
     const data = React.useContext(DataContext);
@@ -100,25 +100,25 @@ function ThisYearReport(props) {
 
     return (
         <div className={className}>
-            <ReportHeader>
-                2021年信息公示
-            </ReportHeader>
+            <RightReportHeader>
+                2021年群众留言
+            </RightReportHeader>
             <ReportGrid  justify="space-around"  align="middle" gutter={[8,8]}>
                 <ReportCol  span={11}>
-                    <Label>已发布<br/>信息数</Label>
+                    <Label>群众留<br/>言总数</Label>
                     <Number>75</Number>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>已公示<br/>信息数</Label>
+                    <Label>已回复<br/>留言数</Label>
                     <Number>38</Number>
                 </ReportCol>
 
                 <ReportCol span={11}>
-                    <Label>月平均<br/>信息数</Label>
+                    <Label>留言群<br/>众总数</Label>
                     <Number>12</Number>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>月发布<br/>信息数</Label>
+                    <Label>留言<br/>回复率</Label>
                     <Number>15</Number>
                 </ReportCol>
             </ReportGrid>
@@ -132,9 +132,9 @@ function ThisYearReport(props) {
     );
 }
 
-export default styled(ThisYearReport)`
+export default styled(PeopleComment)`
     height: 32.3%;
     margin-bottom: 1%;
-    background: url(${leftBg}) no-repeat;
+    background: url(${rightBg}) no-repeat;
     background-size:100% 100%;
 `
