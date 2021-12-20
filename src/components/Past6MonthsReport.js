@@ -27,7 +27,6 @@ function Past6MonthsReport(props) {
             grid: {
                 left: '10%',
                 right: '10%',
-                // height: '80%',
                 bottom: '3%',
                 containLabel: true,
                 top: 30,

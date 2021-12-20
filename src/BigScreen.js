@@ -38,12 +38,12 @@ function BigScreen(props) {
                     <Top/>
                 </MyHeader>
                 <MyLayout>
-                    <MySider width={'28%'}>
+                    <MySider width={'26%'}>
                         <Left/>
                     </MySider>
-                    <Content width={'44%'}>
+                    <Content width={'48%'}>
                     </Content>
-                    <Sider width={'28%'}>
+                    <Sider width={'26%'}>
                     </Sider>
                 </MyLayout>
             </MyLayout>
