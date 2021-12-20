@@ -1,10 +1,19 @@
 import styled from "styled-components";
 import {Typography} from "antd";
 
-export const ReportHeader = styled(Typography)`
+export const LeftReportHeader = styled(Typography)`
     font-size: 1.2rem;
     color: #fff;
     padding-left: 8%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
+    height: 15%;
+`;
+
+export const MidReportHeader = styled(Typography)`
+    font-size: 1.2rem;
+    color: #fff;
+    padding-left: 40%;
     padding-top: 0.5rem;
     padding-bottom: 0.3rem;
     height: 15%;

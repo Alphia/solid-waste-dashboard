@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components"
 import ReactECharts from 'echarts-for-react/lib/index'
 import DataContext from '../../DataContext';
-import {ReportHeader} from "../Block";
+import {LeftReportHeader} from "../Block";
 import left from "../../img/left.png";
 
 function Past6MonthsReport(props) {
@@ -68,9 +68,9 @@ function Past6MonthsReport(props) {
     return (
         <div className={className}>
 
-            <ReportHeader>
+            <LeftReportHeader>
                 半年内公示情况
-            </ReportHeader>
+            </LeftReportHeader>
 
             <ReactECharts
                 option={option}

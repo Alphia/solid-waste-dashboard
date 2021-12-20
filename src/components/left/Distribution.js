@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components"
 import ReactECharts from 'echarts-for-react/lib/index'
 import DataContext from '../../DataContext';
-import {ReportHeader} from "../Block";
+import {LeftReportHeader} from "../Block";
 import left from "../../img/left.png";
 
 function Distribution(props) {
@@ -52,9 +52,9 @@ function Distribution(props) {
     return (
         <div className={className}>
 
-            <ReportHeader>
+            <LeftReportHeader>
                 信息公示分布
-            </ReportHeader>
+            </LeftReportHeader>
 
             <ReactECharts
                 option={option}

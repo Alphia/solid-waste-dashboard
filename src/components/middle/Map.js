@@ -3,8 +3,8 @@ import styled from "styled-components"
 import DataContext from '../../DataContext';
 import {Col, Row} from 'antd/lib/index';
 import "antd/dist/antd.css";
-import leftBg from '../../img/left_header2.png'
-import {LeftReportHeader, Tail, TailContent, TailHeader} from "../Block";
+import rightBg from '../../img/right_header2.png'
+import {RightReportHeader, Tail, TailContent, TailHeader} from "../Block";
 
 const ReportGrid = styled(Row)`
     width: 90%;
@@ -39,7 +39,7 @@ const Number = styled.div`
     border-left: #fff 1px solid;
 `;
 
-function ThisYearReport(props) {
+function Map(props) {
 
     const {className} = props;
     const data = React.useContext(DataContext);
@@ -100,41 +100,35 @@ function ThisYearReport(props) {
 
     return (
         <div className={className}>
-            <LeftReportHeader>
-                2021年信息公示
-            </LeftReportHeader>
+            <RightReportHeader>
+                21年群众留言
+            </RightReportHeader>
             <ReportGrid  justify="space-around"  align="middle" gutter={[8,8]}>
                 <ReportCol  span={11}>
-                    <Label>已发布<br/>信息数</Label>
+                    <Label>群众留<br/>言总数</Label>
                     <Number>75</Number>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>已公示<br/>信息数</Label>
+                    <Label>已回复<br/>留言数</Label>
                     <Number>38</Number>
                 </ReportCol>
 
                 <ReportCol span={11}>
-                    <Label>月平均<br/>信息数</Label>
+                    <Label>留言群<br/>众总数</Label>
                     <Number>12</Number>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>月发布<br/>信息数</Label>
+                    <Label>留言<br/>回复率</Label>
                     <Number>15</Number>
                 </ReportCol>
             </ReportGrid>
-            <Tail>
-                <TailHeader>说明</TailHeader>
-                <TailContent>
-                    已发布、已公示信息包含各镇、村所发布信息，月平均为已发布平均数，月发布为公示平均数
-                </TailContent>
-            </Tail>
         </div>
     );
 }
 
-export default styled(ThisYearReport)`
-    height: 32.3%;
+export default styled(Map)`
+    height: 65.7%;
     margin-bottom: 1%;
-    background: url(${leftBg}) no-repeat;
+    //background: url(${rightBg}) no-repeat;
     background-size:100% 100%;
 `

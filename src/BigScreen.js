@@ -6,6 +6,7 @@ import Left from "./components/left/Left";
 import "antd/dist/antd.css";
 import { Layout } from 'antd';
 import Right from "./components/right/Right";
+import Middle from "./components/middle/Middle";
 const { Header, Sider, Content } = Layout;
 
 const MyHeader = styled(Header)`
@@ -43,6 +44,7 @@ function BigScreen(props) {
                         <Left/>
                     </MySider>
                     <Content width={'48%'}>
+                        <Middle/>
                     </Content>
                     <MySider width={'26%'}>
                         <Right></Right>
