@@ -1,21 +1,20 @@
 import React from "react";
 import styled from "styled-components"
-import Past6MonthsReport from "./Past6MonthsReport";
 import Distribution from "./Distribution";
 import PeopleComment from "./PeopleComment";
+import CommentsPercentage from "./CommentsPercentage";
 
 function Right(props) {
 
     return (
         <>
             <PeopleComment/>
-            <Past6MonthsReport/>
+            <CommentsPercentage/>
             <Distribution/>
         </>
     )
 }
 
-// export default styled(Left2)
 export default styled(Right)`
     //background: none;
 `;
