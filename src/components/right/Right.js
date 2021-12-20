@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components"
-import Distribution from "../left/Distribution";
 import PeopleComment from "./PeopleComment";
 import CommentsPercentage from "./CommentsPercentage";
+import Ranking from "./Ranking";
 
 function Right(props) {
 
@@ -10,7 +10,7 @@ function Right(props) {
         <>
             <PeopleComment/>
             <CommentsPercentage/>
-            <Distribution/>
+            <Ranking/>
         </>
     )
 }

@@ -101,7 +101,7 @@ function PeopleComment(props) {
     return (
         <div className={className}>
             <RightReportHeader>
-                2021年群众留言
+                21年群众留言
             </RightReportHeader>
             <ReportGrid  justify="space-around"  align="middle" gutter={[8,8]}>
                 <ReportCol  span={11}>

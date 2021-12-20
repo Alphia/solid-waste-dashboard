@@ -118,7 +118,7 @@ function CommentsPercentage(props) {
         <div className={className}>
 
             <RightReportHeader>
-                半年内公示情况
+                21年群众留言比例
             </RightReportHeader>
 
             <ReactECharts
