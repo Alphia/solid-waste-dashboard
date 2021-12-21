@@ -14,9 +14,9 @@ export const MidReportHeader = styled(Typography)`
     font-size: 1.2rem;
     color: #fff;
     padding-left: 40%;
-    padding-top: 0.5rem;
-    padding-bottom: 0.3rem;
-    height: 15%;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    height: 10%;
 `;
 
 export const RightReportHeader = styled(Typography)`
