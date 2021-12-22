@@ -4,13 +4,18 @@ import DataContext from '../../DataContext';
 import {Col, Row} from 'antd/lib/index';
 import "antd/dist/antd.css";
 import rightBg from '../../img/right_header2.png'
-import {RightReportHeader, Tail, TailContent, TailHeader} from "../Block";
+import hiTechMap from '../../map/HiTechMap';
+import ReactECharts from "echarts-for-react";
+import * as echarts from 'echarts';
+
+console.log(hiTechMap);
+echarts.registerMap('zzHiTech', hiTechMap);
+
 
 const ReportGrid = styled(Row)`
-    width: 90%;
-    padding-right: 10%;
-    float: right;
-    height: 60%;
+    padding-right: 5%;
+    padding-left: 5%;
+    height: 20%;
 `;
 
 const ReportCol = styled(Col)`
@@ -37,6 +42,7 @@ const Number = styled.div`
     width: 40%;
     font-size: 1.5rem;
     border-left: #fff 1px solid;
+    border-left: #9363ff 1px solid;
 `;
 
 function Map(props) {
@@ -45,53 +51,27 @@ function Map(props) {
     const data = React.useContext(DataContext);
     const extractOption = data => {
         return {
-            title: {
-                text: '半年内公示情况'
-            },
+            backgroundColor: 'transparent',
             tooltip: {
-                trigger: 'axis'
+                show:true,
+                formatter: '{b}<br/>{c} (p / km2)'
             },
-            legend: {
-                data: ['已发布信息', '已公示信息']
-            },
-            toolbox: {
-                feature: {
-                    saveAsImage: {}
-                }
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                // height: '40%',
-                bottom: '3%',
-                containLabel: true
-            },
-            xAxis: [
-                {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['6月', '7月', '8月', '周四', '周五', '周六', '周日']
-                }
-            ],
-            yAxis: [
-                {
-                    type: 'value'
-                }
-            ],
             series: [
                 {
-                    name: '已发布信息',
-                    type: 'line',
-                    stack: '总量',
-                    areaStyle: {normal: {}},
-                    data: [data.currentYear_suggent_response_cnt, 132, 101, 134, 90, 230, 210]
-                },
-                {
-                    name: '已公示信息',
-                    type: 'line',
-                    stack: '总量',
-                    areaStyle: {normal: {}},
-                    data: [220, 182, 191, 234, 290, 330, 310]
+                    // name: 'zzHiTech',
+                    type: 'map',
+                    map: 'zzHiTech',
+                    colorBy: 'data',
+                    label: {
+                        show: true
+                    },
+                    data: [
+                        { name: '沟赵办事处', value: 20057.34, itemStyle:{areaColor:'#be36ff',opacity:0.7} },
+                        { name: '双桥办事处', value: 15477.48, itemStyle:{areaColor:'#2dffbe',opacity:0.7} },
+                        { name: '梧桐办事处', value: 6992.6,itemStyle:{areaColor:'#f0f8ff',opacity:0.7} },
+                        { name: '枫杨办事处', value: 31686.1,itemStyle:{areaColor:'#3299ff',opacity:0.7} },
+                        { name: '石佛办事处', value: 6992.6,itemStyle:{areaColor:'#0efcff',opacity:0.7} },
+                    ],
                 }
             ]
         };
@@ -100,28 +80,26 @@ function Map(props) {
 
     return (
         <div className={className}>
-            <RightReportHeader>
-                21年群众留言
-            </RightReportHeader>
             <ReportGrid  justify="space-around"  align="middle" gutter={[8,8]}>
-                <ReportCol  span={11}>
+                <ReportCol  span={7}>
                     <Label>群众留<br/>言总数</Label>
                     <Number>75</Number>
                 </ReportCol>
-                <ReportCol span={11}>
+                <ReportCol span={7}>
                     <Label>已回复<br/>留言数</Label>
                     <Number>38</Number>
                 </ReportCol>
 
-                <ReportCol span={11}>
+                <ReportCol span={7}>
                     <Label>留言群<br/>众总数</Label>
                     <Number>12</Number>
                 </ReportCol>
-                <ReportCol span={11}>
-                    <Label>留言<br/>回复率</Label>
-                    <Number>15</Number>
-                </ReportCol>
             </ReportGrid>
+            <ReactECharts
+                option={option}
+                theme={'macarons'}
+                style={{height: '80%', overflow: 'show'}}
+            />
         </div>
     );
 }
