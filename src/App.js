@@ -5,15 +5,33 @@ import DataContext from './DataContext';
 import {sample} from "./DataSample";
 import macorons from './themes/macarons';
 import chalk from './themes/chalk';
+import essos from './themes/essos';
+import infographic from './themes/infographic';
+import purplePassion from './themes/purple-passion';
+import roma from './themes/roma';
+import shine from './themes/shine';
+import vintage from './themes/vintage';
+import walden from './themes/walden';
+import westeros from './themes/westeros';
+import wonderland from './themes/wonderland';
 import * as echarts from 'echarts';
 import ThemeContext from './themes/ThemeContext';
 
 echarts.registerTheme('macarons', macorons);
 echarts.registerTheme('chalk', chalk);
+echarts.registerTheme('essos', essos);
+echarts.registerTheme('infographic', infographic);
+echarts.registerTheme('purple-passion', purplePassion);
+echarts.registerTheme('roma', roma);
+echarts.registerTheme('shine', shine);
+echarts.registerTheme('vintage', vintage);
+echarts.registerTheme('walden', walden);
+echarts.registerTheme('westeros', westeros);
+echarts.registerTheme('wonderland', wonderland);
 
 function App(props) {
     const [data, setData] = useState(sample.data);
-    const [theme, setTheme] = useState('chalk');
+    const [theme, setTheme] = useState('walden');
 
     return (
         <ThemeContext.Provider value={theme}>
