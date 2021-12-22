@@ -6,6 +6,7 @@ import {RightReportHeader} from "../Block";
 import right from "../../img/right.png";
 import {Col, Row} from "antd/lib/index";
 import "antd/dist/antd.css";
+import ThemeContext from '../../themes/ThemeContext';
 
 const LabelGrid = styled(Row)`
     margin-top: -4%;
@@ -38,6 +39,7 @@ function CommentsPercentage(props) {
 
     const {className} = props;
     const data = React.useContext(DataContext);
+    const theme = React.useContext(ThemeContext);
     const extractOption = data => {
         return {
             title: {
@@ -123,7 +125,7 @@ function CommentsPercentage(props) {
 
             <ReactECharts
                 option={option}
-                theme='dark'
+                theme={theme}
                 style={{height: '58%', overflow: 'show',paddingLeft:'5%',paddingRight:'5%'}}
                 className={`background: none;`}
             />

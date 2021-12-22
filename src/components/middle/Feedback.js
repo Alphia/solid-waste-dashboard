@@ -3,11 +3,13 @@ import styled from "styled-components"
 import ReactECharts from 'echarts-for-react/lib/index'
 import DataContext from '../../DataContext';
 import middle from "../../img/middle.png";
+import ThemeContext from "../../themes/ThemeContext";
 
 function Feedback(props) {
 
     const {className} = props;
     const data = React.useContext(DataContext);
+    const theme = React.useContext(ThemeContext);
     const extractOption = data => {
         return {
             title: {
@@ -88,7 +90,7 @@ function Feedback(props) {
         <div className={className}>
             <ReactECharts
                 option={option}
-                theme='dark'
+                theme={theme}
                 style={{height: '100%'}}
                 className={`background: none;`}
             />

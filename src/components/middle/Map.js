@@ -7,6 +7,7 @@ import rightBg from '../../img/right_header2.png'
 import hiTechMap from '../../map/HiTechMap';
 import ReactECharts from "echarts-for-react";
 import * as echarts from 'echarts';
+import ThemeContext from "../../themes/ThemeContext";
 
 console.log(hiTechMap);
 echarts.registerMap('zzHiTech', hiTechMap);
@@ -49,6 +50,7 @@ function Map(props) {
 
     const {className} = props;
     const data = React.useContext(DataContext);
+    const theme = React.useContext(ThemeContext);
     const extractOption = data => {
         return {
             backgroundColor: 'transparent',
@@ -97,7 +99,7 @@ function Map(props) {
             </ReportGrid>
             <ReactECharts
                 option={option}
-                theme={'macarons'}
+                theme={theme}
                 style={{height: '80%', overflow: 'show'}}
             />
         </div>

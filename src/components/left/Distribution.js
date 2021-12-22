@@ -4,11 +4,13 @@ import ReactECharts from 'echarts-for-react/lib/index'
 import DataContext from '../../DataContext';
 import {LeftReportHeader} from "../Block";
 import left from "../../img/left.png";
+import ThemeContext from '../../themes/ThemeContext';
 
 function Distribution(props) {
 
     const {className} = props;
     const data = React.useContext(DataContext);
+    const theme = React.useContext(ThemeContext);
     const extractOption = data => {
         return {
             backgroundColor: 'transparent',
@@ -58,7 +60,7 @@ function Distribution(props) {
 
             <ReactECharts
                 option={option}
-                theme='dark'
+                theme={theme}
                 style={{height: '80%'}}
                 className={`background: none;`}
             />

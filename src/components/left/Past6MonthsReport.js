@@ -4,11 +4,13 @@ import ReactECharts from 'echarts-for-react/lib/index'
 import DataContext from '../../DataContext';
 import {LeftReportHeader} from "../Block";
 import left from "../../img/left.png";
+import ThemeContext from '../../themes/ThemeContext';
 
 function Past6MonthsReport(props) {
 
     const {className} = props;
     const data = React.useContext(DataContext);
+    const theme = React.useContext(ThemeContext);
     const extractOption = data => {
         return {
             tooltip: {
@@ -74,7 +76,7 @@ function Past6MonthsReport(props) {
 
             <ReactECharts
                 option={option}
-                theme='dark'
+                theme={theme}
                 style={{height: '78%', overflow: 'show'}}
                 className={`background: none;`}
             />
