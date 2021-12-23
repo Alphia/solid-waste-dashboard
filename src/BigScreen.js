@@ -24,8 +24,8 @@ const MyLayout = styled(Layout)({
 
 const MySider = styled(Sider)({
     'height':'100%',
-    // 'padding-left':'0.5%',
-    // 'padding-right':'0.5%',
+    'margin-left':'0.8%',
+    'margin-right':'0.8%',
     'background':'none'
 });
 

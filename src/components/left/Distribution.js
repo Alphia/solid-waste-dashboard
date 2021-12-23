@@ -69,8 +69,8 @@ function Distribution(props) {
 }
 
 export default styled(Distribution)`
-    height: 32.3%;
-    margin-bottom: 1%;
+    height: 31.6%;
+    margin-top: 1rem;
     background: url(${left}) no-repeat;
     background-size:100% 100%;
 `;

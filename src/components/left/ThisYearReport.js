@@ -40,7 +40,6 @@ const Number = styled.div`
 `;
 
 function ThisYearReport(props) {
-
     const {className} = props;
     const data = React.useContext(DataContext);
     const extractOption = data => {
@@ -133,8 +132,8 @@ function ThisYearReport(props) {
 }
 
 export default styled(ThisYearReport)`
-    height: 32.3%;
-    margin-bottom: 1%;
+    height: 31.6%;
+    //margin-top: 3%;
     background: url(${leftBg}) no-repeat;
     background-size:100% 100%;
 `
