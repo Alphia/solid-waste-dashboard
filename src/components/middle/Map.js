@@ -107,7 +107,7 @@ function Map(props) {
 }
 
 export default styled(Map)`
-    height: 65.7%;
+    height: 69%;
     margin-bottom: 1%;
     //background: url(${rightBg}) no-repeat;
     background-size:100% 100%;
