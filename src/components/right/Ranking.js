@@ -10,7 +10,7 @@ import _ from 'lodash';
 const ReportGrid = styled(Row)`
     padding-right: 5%;
     padding-left: 5%;
-    height: 80%;
+    height: 78%;
 `;
 
 const ReportCol = styled(Col)`
@@ -35,7 +35,7 @@ const MyDivider = styled(Divider)`
 `;
 
 const ListWrapper = styled.div`
-    padding: 0.3rem;
+    padding: 0.3rem 0.6rem 0.3rem 0.3rem;
 `;
 
 const List = styled.div`
@@ -160,8 +160,8 @@ function Ranking(props) {
 }
 
 export default styled(Ranking)`
-    height: 32.3%;
-    margin-bottom: 1%;
+    height: 31.6%;
+    margin-top: 1rem;
     background: url(${right}) no-repeat;
     background-size:100% 100%;
 `

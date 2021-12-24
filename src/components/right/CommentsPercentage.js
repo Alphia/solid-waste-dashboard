@@ -148,8 +148,8 @@ function CommentsPercentage(props) {
 }
 
 export default styled(CommentsPercentage)`
-    height: 32.3%;
-    margin-bottom: 1%;
+    height: 31.6%;
+    margin-top: 1rem;
     background: url(${right}) no-repeat;
     background-size:100% 100%;
 `;

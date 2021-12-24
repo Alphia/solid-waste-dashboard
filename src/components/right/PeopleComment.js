@@ -133,8 +133,8 @@ function PeopleComment(props) {
 }
 
 export default styled(PeopleComment)`
-    height: 32.3%;
-    margin-bottom: 1%;
+    height: 31.6%;
+    //margin-bottom: 1rem;
     background: url(${rightBg}) no-repeat;
     background-size:100% 100%;
 `

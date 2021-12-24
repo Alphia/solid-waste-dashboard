@@ -5,8 +5,8 @@ export const LeftReportHeader = styled(Typography)`
     font-size: 1.2rem;
     color: #fff;
     padding-left: 8%;
-    padding-top: 0.5rem;
-    padding-bottom: 0.3rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.2rem;
     height: 15%;
 `;
 
@@ -23,8 +23,8 @@ export const RightReportHeader = styled(Typography)`
     font-size: 1.2rem;
     color: #fff;
     padding-left: 63%;
-    padding-top: 0.5rem;
-    padding-bottom: 0.3rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.2rem;
     height: 15%;
 `;
 export const TailHeader = styled.div`
