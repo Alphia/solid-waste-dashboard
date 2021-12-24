@@ -39,6 +39,9 @@ function Past6MonthsReport(props) {
                 axisLabel: {
                     fontSize: 14,
                 },
+                splitLine: {
+                    show: false,
+                }
             },
             yAxis: {
                 type: 'value',
@@ -46,20 +49,23 @@ function Past6MonthsReport(props) {
                 axisLabel: {
                     fontSize: 14,
                 },
+                splitLine: {
+                    show: false,
+                }
             },
             series: [
                 {
                     name: '已发布信息',
                     type: 'line',
                     stack: '已发布',
-                    areaStyle: {normal: {}},
+                    smooth: true,
                     data: [data.currentYear_suggent_response_cnt, 132, 101, 134, 90, 230, 210]
                 },
                 {
                     name: '已公示信息',
                     type: 'line',
                     stack: '已公示',
-                    areaStyle: {normal: {}},
+                    smooth: true,
                     data: [220, 182, 191, 234, 290, 330, 310]
                 }
             ]

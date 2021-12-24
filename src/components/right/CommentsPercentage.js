@@ -9,10 +9,10 @@ import "antd/dist/antd.css";
 import ThemeContext from '../../themes/ThemeContext';
 
 const LabelGrid = styled(Row)`
-    margin-top: -4%;
-    padding-left: 4%;
+    margin-top: -2%;
+    padding-left: 8%;
     width: 100%;
-    padding-right: 5%;
+    padding-right: 9%;
     float: right;
 `;
 
@@ -57,22 +57,22 @@ function CommentsPercentage(props) {
                         }
                     },
                     type: 'pie',
-                    right: '66.6667%',
+                    right: '62%',
                     data: [
                         {
                             value: 233,
                         },
                         {
                             value: 234,
-                            name: 'B'
+                            name: '50%',
                         }
                     ],
                     radius: ['40%', '70%']
                 },
                 {
                     type: 'pie',
-                    right: '33.3333%',
-                    left: '33.3333%',
+                    right: '31%',
+                    left: '31%',
                     label: {
                         normal: {
                             show: true,
@@ -86,14 +86,14 @@ function CommentsPercentage(props) {
                         },
                         {
                             value: 1548,
-                            name: 'C'
+                            name: '10%',
                         }
                     ],
                     radius: ['40%', '70%']
                 },
                 {
                     type: 'pie',
-                    left: '66.6667%',
+                    left: '62%',
                     label: {
                         normal: {
                             show: true,
@@ -107,7 +107,7 @@ function CommentsPercentage(props) {
                         },
                         {
                             value: 335,
-                            name: 'A'
+                            name: '40%',
                         }
                     ],
                     radius: ['40%', '70%']

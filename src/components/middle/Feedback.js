@@ -39,13 +39,14 @@ function Feedback(props) {
                 top: '20%',
             },
             calculable: true,
-            xAxis: [
-                {
-                    type: 'category',
-                    // prettier-ignore
-                    data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            xAxis: {
+                type: 'category',
+                // prettier-ignore
+                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                splitLine: {
+                    show: false,
                 }
-            ],
+            },
             yAxis: {
                 type: 'value',
                 show: true,
@@ -63,7 +64,9 @@ function Feedback(props) {
                     data: [
                         2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 35.6, 62.2, 32.6, 20.0, 6.4, 3.3
                     ],
-
+                    itemStyle:{
+                        borderRadius: 5, // 统一设置四个角的圆角大小
+                    }
                 },
                 {
                     name: '咨询',
@@ -71,6 +74,9 @@ function Feedback(props) {
                     data: [
                         2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 75.6, 82.2, 48.7, 18.8, 6.0, 2.3
                     ],
+                    itemStyle:{
+                        borderRadius: 5, // 统一设置四个角的圆角大小
+                    }
                 },
                 {
                     name: '投诉',
@@ -78,6 +84,9 @@ function Feedback(props) {
                     data: [
                         2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 17.6, 18.2, 4.7, 18.8, 6.0, 2.3
                     ],
+                    itemStyle:{
+                        borderRadius: 5, // 统一设置四个角的圆角大小
+                    }
                 }
             ]
         }
@@ -99,8 +108,8 @@ function Feedback(props) {
 }
 
 export default styled(Feedback)`
-    height: 28%;
-    margin-bottom: 1%;
+  height: 28%;
+  margin-bottom: 1%;
     //background: url(${middle}) no-repeat;
-    background-size:100% 100%;
+  background-size: 100% 100%;
 `;
