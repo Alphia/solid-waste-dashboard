@@ -126,7 +126,7 @@ function CommentsPercentage(props) {
             <ReactECharts
                 option={option}
                 theme={theme}
-                style={{height: '58%', overflow: 'show',paddingLeft:'5%',paddingRight:'5%'}}
+                style={{height: 180, overflow: 'show',paddingLeft:'5%',paddingRight:'5%'}}
                 className={`background: none;`}
             />
             <LabelGrid justify="space-around"  align="middle" gutter={[8,8]}>

@@ -83,7 +83,7 @@ function Past6MonthsReport(props) {
             <ReactECharts
                 option={option}
                 theme={theme}
-                style={{height: '78%', overflow: 'show'}}
+                style={{height: 242, overflow: 'show'}}
                 className={`background: none;`}
             />
         </div>

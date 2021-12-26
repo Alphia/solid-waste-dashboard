@@ -61,7 +61,7 @@ function Distribution(props) {
             <ReactECharts
                 option={option}
                 theme={theme}
-                style={{height: '80%'}}
+                style={{height: 248}}
                 className={`background: none;`}
             />
         </div>

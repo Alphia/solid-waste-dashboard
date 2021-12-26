@@ -117,7 +117,7 @@ function Map(props) {
             <ReactECharts
                 option={option}
                 theme={theme}
-                style={{height: '72%', overflow: 'show'}}
+                style={{height: 489, width:860}}
             />
         </div>
     );

@@ -64,7 +64,7 @@ function Feedback(props) {
                     data: [
                         2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 35.6, 62.2, 32.6, 20.0, 6.4, 3.3
                     ],
-                    itemStyle:{
+                    itemStyle: {
                         borderRadius: 5, // 统一设置四个角的圆角大小
                     }
                 },
@@ -74,7 +74,7 @@ function Feedback(props) {
                     data: [
                         2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 75.6, 82.2, 48.7, 18.8, 6.0, 2.3
                     ],
-                    itemStyle:{
+                    itemStyle: {
                         borderRadius: 5, // 统一设置四个角的圆角大小
                     }
                 },
@@ -84,7 +84,7 @@ function Feedback(props) {
                     data: [
                         2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 17.6, 18.2, 4.7, 18.8, 6.0, 2.3
                     ],
-                    itemStyle:{
+                    itemStyle: {
                         borderRadius: 5, // 统一设置四个角的圆角大小
                     }
                 }
@@ -100,7 +100,7 @@ function Feedback(props) {
             <ReactECharts
                 option={option}
                 theme={theme}
-                style={{height: '100%'}}
+                style={{height: 276, width: 860}}
                 className={`background: none;`}
             />
         </div>
