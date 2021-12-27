@@ -8,6 +8,7 @@ import hiTechMap from '../../map/HiTechMap';
 import ReactECharts from "echarts-for-react";
 import * as echarts from 'echarts';
 import ThemeContext from "../../themes/ThemeContext";
+import {CloudUploadOutlined, MessageOutlined, ProfileOutlined, TeamOutlined} from "@ant-design/icons";
 
 console.log(hiTechMap);
 echarts.registerMap('zzHiTech', hiTechMap);
@@ -22,28 +23,38 @@ const ReportGrid = styled(Row)`
 const ReportCol = styled(Col)`
   box-sizing: border-box;
   background-color: rgba(14, 252, 255, 0.15);
-  height: 5.1rem;
-  justify-content: center; //子元素水平居中
+  justify-content: left; //子元素水平居中
   align-items: center; //子元素垂直居中
   display: flex;
   border-radius: 9px;
+  flex-wrap: wrap;
 `;
 
-const Label = styled.div`
+const Icon = styled.div`
   text-align: center;
-  color: #fff;
-  width: 60%;
+  color: #a7c0db;
+  width: 5.5rem;
+  font-size: 3.2rem;
+  border-radius: 0.8rem 0 0 0;
+  margin-left: -4px;
+`;
+const Des = styled.div`
+  color: #ffffff;
+  text-align: center;
+  flex-grow: 1;
   font-size: 1.2rem;
-  border-right: #61dafb 1px;
+  margin: 0 -4px;
+  border-radius: 0 0 0.8rem 0.8rem;
+  background-color: rgba(167, 192, 219, 0.15);
+  letter-spacing: 0.5rem;
 `;
 
 const Number = styled.div`
   text-align: center;
   color: #0efcff;
-  width: 40%;
-  font-size: 1.5rem;
-  border-left: #fff 1px solid;
-  border-left: #9363ff 1px solid;
+  flex-grow: 1;
+  font-size: 2.2rem;
+  border-left: #02aeb1 1px solid;
 `;
 
 function Map(props) {
@@ -100,18 +111,21 @@ function Map(props) {
     return (
         <div className={className}>
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
-                <ReportCol span={7}>
-                    <Label>群众留<br/>言总数</Label>
+                <ReportCol span={6}>
+                    <Icon><ProfileOutlined /></Icon>
                     <Number>75</Number>
+                    <Des>累计信息总数</Des>
                 </ReportCol>
-                <ReportCol span={7}>
-                    <Label>已回复<br/>留言数</Label>
+                <ReportCol span={6}>
+                    <Icon><CloudUploadOutlined /></Icon>
                     <Number>38</Number>
+                    <Des>已公示信息数</Des>
                 </ReportCol>
 
-                <ReportCol span={7}>
-                    <Label>留言群<br/>众总数</Label>
+                <ReportCol span={6}>
+                    <Icon><TeamOutlined /></Icon>
                     <Number>12</Number>
+                    <Des>群众留言总数</Des>
                 </ReportCol>
             </ReportGrid>
             <ReactECharts

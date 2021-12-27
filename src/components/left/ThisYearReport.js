@@ -28,7 +28,6 @@ const Label = styled.div`
     color: #fff;
     width: 60%;
     font-size: 1.2rem;
-    border-right: #61dafb 1px;
 `;
 
 const Number = styled.div`
@@ -36,7 +35,7 @@ const Number = styled.div`
     color: #0efcff;
     width: 40%;
     font-size: 1.5rem;
-    border-left: #fff 1px solid;
+    border-left: #02aeb1 1px solid;
 `;
 
 function ThisYearReport(props) {
