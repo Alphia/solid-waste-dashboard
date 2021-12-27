@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import BigScreen from "./BigScreen";
 import DataContext from './DataContext';
 import {sample} from "./DataSample";
@@ -16,6 +16,7 @@ import westeros from './themes/westeros';
 import wonderland from './themes/wonderland';
 import * as echarts from 'echarts';
 import ThemeContext from './themes/ThemeContext';
+import dataClient from "./client/dataClient";
 
 echarts.registerTheme('macarons', macorons);
 echarts.registerTheme('chalk', chalk);
@@ -32,6 +33,21 @@ echarts.registerTheme('wonderland', wonderland);
 function App(props) {
     const [data, setData] = useState(sample.data);
     const [theme, setTheme] = useState('walden');
+
+    const getDashboardData = () => dataClient.getDashboardData()
+        .then(response => {
+            console.log(response);
+            setData(response.data.data);
+        })
+        .catch(err => {
+            console.log("当前与后端服务的网络连接有误，请检查后再执行");
+            console.log(err);
+        });
+
+    useEffect(() => {
+        let interval = setInterval(getDashboardData, 60000);
+        return ()=>clearInterval(interval);
+    }, []);
 
     return (
         <ThemeContext.Provider value={theme}>

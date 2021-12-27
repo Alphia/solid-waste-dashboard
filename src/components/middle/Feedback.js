@@ -17,10 +17,10 @@ function Feedback(props) {
                 show: true,
                 textStyle: {
                     color: 'white',
-                    fontSize: '1.2rem',
-                    fontWeight: 'normal'
+                    fontSize: '1.4rem',
+                    fontWeight: 'normal',
                 },
-                left: '45%'
+                left: '42%'
             },
             backgroundColor: 'transparent',
             tooltip: {
@@ -30,6 +30,10 @@ function Feedback(props) {
                 data: ['建议', '咨询', '投诉'],
                 left: '70%',
                 top: '10%',
+                textStyle: {
+                    color:'white',
+                    fontSize: '1rem'
+                }
             },
             grid: {
                 left: '5%',
@@ -45,6 +49,10 @@ function Feedback(props) {
                 data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 splitLine: {
                     show: false,
+                },
+                axisLabel:{
+                    color:'white',
+                    fontSize: '1rem'
                 }
             },
             yAxis: {
@@ -55,6 +63,10 @@ function Feedback(props) {
                 },
                 splitLine: {
                     show: false,
+                },
+                axisLabel:{
+                    color:'white',
+                    fontSize: '1rem'
                 }
             },
             series: [

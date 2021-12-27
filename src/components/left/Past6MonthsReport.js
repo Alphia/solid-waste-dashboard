@@ -37,7 +37,8 @@ function Past6MonthsReport(props) {
                 boundaryGap: false,
                 data: ['6月', '7月', '8月', '9月', '10月', '11月'],
                 axisLabel: {
-                    fontSize: 14,
+                    color:'white',
+                    fontSize: '1rem',
                 },
                 splitLine: {
                     show: false,
@@ -47,7 +48,8 @@ function Past6MonthsReport(props) {
                 type: 'value',
                 splitNumber: 4,
                 axisLabel: {
-                    fontSize: 14,
+                    fontSize: '1rem',
+                    color:'white'
                 },
                 splitLine: {
                     show: false,
