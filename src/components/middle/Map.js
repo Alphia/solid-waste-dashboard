@@ -3,7 +3,7 @@ import styled from "styled-components"
 import DataContext from '../../DataContext';
 import {Col, Row} from 'antd/lib/index';
 import "antd/dist/antd.css";
-import rightBg from '../../img/right_header2.png'
+import _ from 'lodash';
 import hiTechMap from '../../map/HiTechMap';
 import ReactECharts from "echarts-for-react";
 import * as echarts from 'echarts';
@@ -53,7 +53,7 @@ const Number = styled.div`
   text-align: center;
   color: #0efcff;
   flex-grow: 1;
-  font-size: 2.2rem;
+  font-size: 2rem;
   border-left: #02aeb1 1px solid;
 `;
 
@@ -62,7 +62,27 @@ function Map(props) {
     const {className} = props;
     const data = React.useContext(DataContext);
     const theme = React.useContext(ThemeContext);
+
+    const amountByOrg = data.total_aticleCountGroupByOrg_L1;
+
+    let values = _.map(amountByOrg, e => e.cnt) || [];
+    const max = _.max(values) || 1;
+    const min = _.min(values) || 0;
+
+    const getAmountOfOrg = org => {
+        let orgObj = _.find(amountByOrg, e => e.org_name === org);
+        return orgObj ? orgObj.cnt : 0
+    }
+
+    const deltaSize = value => 20 * (value - min) / (max - min);
+    const deltaHeight = value => deltaSize(value) / 2;
+
     const extractOption = data => {
+        let gouzhaoAmount = getAmountOfOrg('沟赵办事处');
+        let shuangqiaoAmount = getAmountOfOrg('双桥办事处');
+        let wutongAmount = getAmountOfOrg('梧桐办事处');
+        let fengyangAmount = getAmountOfOrg('枫杨办事处');
+        let shifoAmount = getAmountOfOrg('石佛办事处');
         return {
             backgroundColor: 'transparent',
             tooltip: {
@@ -78,28 +98,58 @@ function Map(props) {
                         fontSize: "1.1rem"
                     },
                     data: [
-                        {name: '沟赵办事处', value: 200, itemStyle: {areaColor: '#be36ff', opacity: 0.7}},
-                        {name: '双桥办事处', value: 154, itemStyle: {areaColor: '#2dffbe', opacity: 0.7}},
-                        {name: '梧桐办事处', value: 6992.6, itemStyle: {areaColor: '#f0f8ff', opacity: 0.7}},
-                        {name: '枫杨办事处', value: 31686.1, itemStyle: {areaColor: '#3299ff', opacity: 0.7}},
-                        {name: '石佛办事处', value: 6992.6, itemStyle: {areaColor: '#0efcff', opacity: 0.7}},
+                        {name: '沟赵办事处', itemStyle: {areaColor: '#954ad5', opacity: 0.7}},
+                        {name: '双桥办事处', itemStyle: {areaColor: '#2dffbe', opacity: 0.7}},
+                        {name: '梧桐办事处', itemStyle: {areaColor: '#f0f8ff', opacity: 0.7}},
+                        {name: '枫杨办事处', itemStyle: {areaColor: '#3299ff', opacity: 0.7}},
+                        {name: '石佛办事处', itemStyle: {areaColor: '#0efcff', opacity: 0.7}},
                     ],
                     markPoint: {
                         symbol: 'circle',
                         symbolSize: 40,
-                        label:{
-                            fontSize:'1.1rem',
+                        label: {
+                            fontSize: '1.1rem',
                         },
-                        itemStyle:{
-                            color:'#fff',
+                        itemStyle: {
+                            color: '#fff',
                             opacity: 1,
                         },
                         data: [
-                            {x:255,y:245,value:200,label:{color:'#be36ff'}},
-                            {x:508,y:85,value:57,label:{color:'#0aaf7b'}},
-                            {x:490,y:315,value:57,label:{color:'#5a6269'}},
-                            {x:570,y:190,value:15,label:{color:'#3299ff'}},
-                            {x:660,y:345,value:75,label:{color:'#02aeb1'}},
+                            {
+                                x: 255,
+                                y: 245 - deltaHeight(gouzhaoAmount),
+                                value: gouzhaoAmount,
+                                symbolSize: 40 + deltaSize(gouzhaoAmount),
+                                label: {color: '#954ad5'}
+                            },
+                            {
+                                x: 508,
+                                y: 85 - deltaHeight(shuangqiaoAmount),
+                                value: shuangqiaoAmount,
+                                symbolSize: 40 + deltaSize(shuangqiaoAmount),
+                                label: {color: '#0aaf7b'}
+                            },
+                            {
+                                x: 490,
+                                y: 315 - deltaHeight(wutongAmount),
+                                value: wutongAmount,
+                                symbolSize: 40 + deltaSize(wutongAmount),
+                                label: {color: '#5a6269'}
+                            },
+                            {
+                                x: 570,
+                                y: 190 - deltaHeight(fengyangAmount),
+                                value: fengyangAmount,
+                                symbolSize: 40 + deltaSize(fengyangAmount),
+                                label: {color: '#3299ff'}
+                            },
+                            {
+                                x: 660,
+                                y: 345 - deltaHeight(shifoAmount),
+                                value: shifoAmount,
+                                symbolSize: 40 + deltaSize(shifoAmount),
+                                label: {color: '#02aeb1'}
+                            },
                         ],
                     }
                 }
@@ -112,26 +162,27 @@ function Map(props) {
         <div className={className}>
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <ReportCol span={6}>
-                    <Icon><ProfileOutlined /></Icon>
-                    <Number>75</Number>
+                    <Icon><ProfileOutlined/></Icon>
+                    <Number>{data.total_content_cnt}</Number>
+                    {/*<Number>{99999}</Number>*/}
                     <Des>累计信息总数</Des>
                 </ReportCol>
                 <ReportCol span={6}>
-                    <Icon><CloudUploadOutlined /></Icon>
-                    <Number>38</Number>
+                    <Icon><CloudUploadOutlined/></Icon>
+                    <Number>{data.total_gsxx_content_cnt}</Number>
                     <Des>已公示信息数</Des>
                 </ReportCol>
 
                 <ReportCol span={6}>
-                    <Icon><TeamOutlined /></Icon>
-                    <Number>12</Number>
+                    <Icon><TeamOutlined/></Icon>
+                    <Number>{data.total_suggent_cnt}</Number>
                     <Des>群众留言总数</Des>
                 </ReportCol>
             </ReportGrid>
             <ReactECharts
                 option={option}
                 theme={theme}
-                style={{height: 489, width:860}}
+                style={{height: 489, width: 860}}
             />
         </div>
     );
@@ -140,6 +191,5 @@ function Map(props) {
 export default styled(Map)`
   height: 69%;
   margin-bottom: 1%;
-    //background: url(${rightBg}) no-repeat;
   background-size: 100% 100%;
 `
