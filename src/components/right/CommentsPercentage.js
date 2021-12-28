@@ -7,39 +7,47 @@ import right from "../../img/right.png";
 import {Col, Row} from "antd/lib/index";
 import "antd/dist/antd.css";
 import ThemeContext from '../../themes/ThemeContext';
+import _ from 'lodash';
 
 const LabelGrid = styled(Row)`
-    margin-top: -2%;
-    padding-left: 8%;
-    width: 100%;
-    padding-right: 9%;
-    float: right;
+  margin-top: -2%;
+  padding-left: 8%;
+  width: 100%;
+  padding-right: 9%;
+  float: right;
 `;
 
-
 const LabelCol = styled(Col)`
-    box-sizing: border-box;
-    height: 5.1rem;
-    border-radius: 9px;
+  box-sizing: border-box;
+  height: 5.1rem;
+  border-radius: 9px;
 `;
 
 const Label = styled.div`
-    text-align: center;
-    color: #fff;
-    font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
 `;
 
-const Number = styled.div`
-    text-align: center;
-    color: #0efcff;
-    font-size: 1.2rem;
+const Num = styled.div`
+  text-align: center;
+  color: #0efcff;
+  font-size: 1.4rem;
 `;
 
 function CommentsPercentage(props) {
 
     const {className} = props;
-    const data = React.useContext(DataContext);
+    const context = React.useContext(DataContext);
     const theme = React.useContext(ThemeContext);
+
+    const commentList = context.currentYear_suggentCountByType;
+    const all = _.reduce(commentList, (sum, e) => sum + e.cnt, 0);
+
+    const report = _.find(commentList, e => e.key === 'jb') || {}
+    const suggest = _.find(commentList, e => e.key === 'jy') || {}
+    const complaint = _.find(commentList, e => e.key === 'ts') || {}
+
     const extractOption = data => {
         return {
             title: {
@@ -53,7 +61,8 @@ function CommentsPercentage(props) {
                         normal: {
                             show: true,
                             position: 'center',
-                            fontSize: '1rem',
+                            fontSize: '1.4rem',
+                            color: '#0efcff',
                         }
                     },
                     type: 'pie',
@@ -64,7 +73,8 @@ function CommentsPercentage(props) {
                         },
                         {
                             value: 234,
-                            name: '50%',
+                            // name: Number(1),
+                            name: 'XX',
                         }
                     ],
                     radius: ['40%', '70%']
@@ -77,16 +87,17 @@ function CommentsPercentage(props) {
                         normal: {
                             show: true,
                             position: 'center',
-                            fontSize: '1rem',
+                            fontSize: '1.4rem',
+                            color: '#0efcff',
                         }
                     },
                     data: [
                         {
-                            value: 233,
+                            value: suggest.cnt,
                         },
                         {
-                            value: 1548,
-                            name: '10%',
+                            value: all - suggest.cnt,
+                            name: Number(suggest.cnt / all * 100).toFixed(0) + "%",
                         }
                     ],
                     radius: ['40%', '70%']
@@ -98,16 +109,17 @@ function CommentsPercentage(props) {
                         normal: {
                             show: true,
                             position: 'center',
-                            fontSize: '1rem',
+                            fontSize: '1.4rem',
+                            color: '#0efcff',
                         }
                     },
                     data: [
                         {
-                            value: 233,
+                            value: complaint.cnt,
                         },
                         {
-                            value: 335,
-                            name: '40%',
+                            value: all - complaint.cnt,
+                            name: Number(complaint.cnt / all * 100).toFixed(0) + "%",
                         }
                     ],
                     radius: ['40%', '70%']
@@ -115,7 +127,7 @@ function CommentsPercentage(props) {
             ]
         };
     };
-    const option = extractOption(data);
+    const option = extractOption(context);
     return (
         <div className={className}>
 
@@ -126,21 +138,21 @@ function CommentsPercentage(props) {
             <ReactECharts
                 option={option}
                 theme={theme}
-                style={{height: 180, overflow: 'show',paddingLeft:'5%',paddingRight:'5%'}}
+                style={{height: 180, overflow: 'show', paddingLeft: '5%', paddingRight: '5%'}}
                 className={`background: none;`}
             />
-            <LabelGrid justify="space-around"  align="middle" gutter={[8,8]}>
+            <LabelGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <LabelCol span={7}>
                     <Label>咨询</Label>
-                    <Number>12</Number>
+                    <Num>12</Num>
                 </LabelCol>
                 <LabelCol span={7}>
                     <Label>建议</Label>
-                    <Number>28</Number>
+                    <Num>28</Num>
                 </LabelCol>
                 <LabelCol span={7}>
                     <Label>投诉</Label>
-                    <Number>10</Number>
+                    <Num>10</Num>
                 </LabelCol>
             </LabelGrid>
         </div>
@@ -148,8 +160,8 @@ function CommentsPercentage(props) {
 }
 
 export default styled(CommentsPercentage)`
-    height: 31.6%;
-    margin-top: 1rem;
-    background: url(${right}) no-repeat;
-    background-size:100% 100%;
+  height: 31.6%;
+  margin-top: 1rem;
+  background: url(${right}) no-repeat;
+  background-size: 100% 100%;
 `;
