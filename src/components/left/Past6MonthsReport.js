@@ -5,6 +5,7 @@ import DataContext from '../../DataContext';
 import {LeftReportHeader} from "../Block";
 import left from "../../img/left.png";
 import ThemeContext from '../../themes/ThemeContext';
+import _ from "lodash";
 
 function Past6MonthsReport(props) {
 
@@ -12,6 +13,13 @@ function Past6MonthsReport(props) {
     const data = React.useContext(DataContext);
     const theme = React.useContext(ThemeContext);
     const extractOption = data => {
+        const publicPost = data.currentYear_gsxxMonthly_cnt;
+        const releasedPost = data.currentYear_fbxxMonthly_cnt;
+
+        const months = _.chain(publicPost).map(e=>e.yearmonth).map(e=>e.split("/")[1]+"月").value();
+        const publicSeries = _.chain(publicPost).map(e=>e.cnt).value();
+        const releasedSeries = _.chain(releasedPost).map(e=>e.cnt).value();
+
         return {
             tooltip: {
                 trigger: 'axis'
@@ -35,7 +43,7 @@ function Past6MonthsReport(props) {
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['6月', '7月', '8月', '9月', '10月', '11月'],
+                data: months,
                 axisLabel: {
                     color:'white',
                     fontSize: '1rem',
@@ -61,14 +69,14 @@ function Past6MonthsReport(props) {
                     type: 'line',
                     stack: '已发布',
                     smooth: true,
-                    data: [data.currentYear_suggent_response_cnt, 132, 101, 134, 90, 230, 210]
+                    data: releasedSeries,
                 },
                 {
                     name: '已公示信息',
                     type: 'line',
                     stack: '已公示',
                     smooth: true,
-                    data: [220, 182, 191, 234, 290, 330, 310]
+                    data: publicSeries,
                 }
             ]
         };
