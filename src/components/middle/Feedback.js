@@ -20,7 +20,7 @@ function Feedback(props) {
 
         return {
             title: {
-                text: '12月内公示情况',
+                text: '12月内群众反馈情况',
                 show: true,
                 textStyle: {
                     color: 'white',
