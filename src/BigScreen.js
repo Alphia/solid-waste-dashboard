@@ -4,10 +4,11 @@ import Top from './components/top/Top';
 import bg from "./img/bg.jpg";
 import Left from "./components/left/Left";
 import "antd/dist/antd.css";
-import { Layout } from 'antd';
+import {Layout} from 'antd';
 import Right from "./components/right/Right";
 import Middle from "./components/middle/Middle";
-const { Header, Sider, Content } = Layout;
+
+const {Header, Sider} = Layout;
 
 const MyHeader = styled(Header)`
     height: 6rem;
@@ -16,26 +17,28 @@ const MyHeader = styled(Header)`
 `;
 
 const MyLayout = styled(Layout)({
-    'height':'100%',
-    // 'padding-left':'0.5%',
-    // 'padding-right':'0.5%',
-    'background':'none'
+    'height': '100%',
+    'background': 'none',
+    'width': '100%'
 });
 
 const MySider = styled(Sider)({
-    'height':'100%',
-    'margin-left':'0.8%',
-    'margin-right':'0.8%',
-    'background':'none'
+    'height': '100%',
+    'margin-left': '0.8%',
+    'margin-right': '0.8%',
+    'background': 'none'
 });
 
+const MyContent = styled(Sider)`
+  height: 100%;
+`
 
 function BigScreen(props) {
     const {className} = props;
 
     return (
         <div id='bs' className={className}>
-            <MyLayout >
+            <MyLayout>
                 <MyHeader>
                     <Top/>
                 </MyHeader>
@@ -43,11 +46,11 @@ function BigScreen(props) {
                     <MySider width={'26%'}>
                         <Left/>
                     </MySider>
-                    <Content width={'48%'}>
+                    <MyContent width={'44.8%'}>
                         <Middle/>
-                    </Content>
+                    </MyContent>
                     <MySider width={'26%'}>
-                        <Right></Right>
+                        <Right/>
                     </MySider>
                 </MyLayout>
             </MyLayout>
@@ -58,6 +61,6 @@ function BigScreen(props) {
 export default styled(BigScreen)`
   position: relative;
   background: url(${bg}) no-repeat;
-  background-size:100% 100%;
+  background-size: 100% 100%;
   height: 100%;
 `;

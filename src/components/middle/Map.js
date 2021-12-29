@@ -8,7 +8,7 @@ import hiTechMap from '../../map/HiTechMap';
 import ReactECharts from "echarts-for-react";
 import * as echarts from 'echarts';
 import ThemeContext from "../../themes/ThemeContext";
-import {CloudUploadOutlined, MessageOutlined, ProfileOutlined, TeamOutlined} from "@ant-design/icons";
+import {CloudUploadOutlined, ProfileOutlined, TeamOutlined} from "@ant-design/icons";
 
 console.log(hiTechMap);
 echarts.registerMap('zzHiTech', hiTechMap);
@@ -182,7 +182,7 @@ function Map(props) {
             <ReactECharts
                 option={option}
                 theme={theme}
-                style={{height: 489, width: 860}}
+                style={{height: 489}}
             />
         </div>
     );
