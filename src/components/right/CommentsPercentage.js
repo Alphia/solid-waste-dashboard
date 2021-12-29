@@ -69,12 +69,12 @@ function CommentsPercentage(props) {
                     right: '62%',
                     data: [
                         {
-                            value: 233,
+                            value: report.cnt,
                         },
                         {
-                            value: 234,
+                            value: all - report.cnt,
                             // name: Number(1),
-                            name: 'XX',
+                            name: Number(report.cnt / all * 100).toFixed(0) + "%",
                         }
                     ],
                     radius: ['40%', '70%']
@@ -144,15 +144,15 @@ function CommentsPercentage(props) {
             <LabelGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <LabelCol span={7}>
                     <Label>咨询</Label>
-                    <Num>12</Num>
+                    <Num>{report.cnt}</Num>
                 </LabelCol>
                 <LabelCol span={7}>
                     <Label>建议</Label>
-                    <Num>28</Num>
+                    <Num>{suggest.cnt}</Num>
                 </LabelCol>
                 <LabelCol span={7}>
                     <Label>投诉</Label>
-                    <Num>10</Num>
+                    <Num>{complaint.cnt}</Num>
                 </LabelCol>
             </LabelGrid>
         </div>

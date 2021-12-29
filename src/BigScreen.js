@@ -31,6 +31,7 @@ const MySider = styled(Sider)({
 
 const MyContent = styled(Sider)`
   height: 100%;
+  background: none
 `
 
 function BigScreen(props) {

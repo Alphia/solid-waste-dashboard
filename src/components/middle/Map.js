@@ -49,7 +49,7 @@ const Des = styled.div`
   letter-spacing: 0.5rem;
 `;
 
-const Number = styled.div`
+const Num = styled.div`
   text-align: center;
   color: #0efcff;
   flex-grow: 1;
@@ -163,19 +163,19 @@ function Map(props) {
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <ReportCol span={6}>
                     <Icon><ProfileOutlined/></Icon>
-                    <Number>{data.total_content_cnt}</Number>
+                    <Num>{data.total_content_cnt}</Num>
                     {/*<Number>{99999}</Number>*/}
                     <Des>累计信息总数</Des>
                 </ReportCol>
                 <ReportCol span={6}>
                     <Icon><CloudUploadOutlined/></Icon>
-                    <Number>{data.total_gsxx_content_cnt}</Number>
+                    <Num>{data.total_gsxx_content_cnt}</Num>
                     <Des>已公示信息数</Des>
                 </ReportCol>
 
                 <ReportCol span={6}>
                     <Icon><TeamOutlined/></Icon>
-                    <Number>{data.total_suggent_cnt}</Number>
+                    <Num>{data.total_suggent_cnt}</Num>
                     <Des>群众留言总数</Des>
                 </ReportCol>
             </ReportGrid>
