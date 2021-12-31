@@ -31,7 +31,7 @@ const Label = styled.div`
   font-size: 1.2rem;
 `;
 
-const Number = styled.div`
+const Num = styled.div`
   text-align: center;
   color: #0efcff;
   width: 40%;
@@ -44,7 +44,7 @@ function ThisYearReport(props) {
     const data = React.useContext(DataContext);
 
     const accumulator = (sum, monthData) => sum + monthData.cnt
-    const calcEvg = monthsData => _.reduce(monthsData, accumulator, 0) / monthsData.length;
+    const calcEvg = monthsData => Number(_.reduce(monthsData, accumulator, 0) / monthsData.length).toFixed(0);
     return (
         <div className={className}>
             <LeftReportHeader>
@@ -53,19 +53,19 @@ function ThisYearReport(props) {
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <ReportCol span={11}>
                     <Label>已发布<br/>信息数</Label>
-                    <Number>{data.currentyear_fbxx_content_cnt}</Number>
+                    <Num>{data.currentyear_fbxx_content_cnt}</Num>
                 </ReportCol>
                 <ReportCol span={11}>
                     <Label>已公示<br/>信息数</Label>
-                    <Number>{data.currentyear_gsxx_content_cnt}</Number>
+                    <Num>{data.currentyear_gsxx_content_cnt}</Num>
                 </ReportCol>
                 <ReportCol span={11}>
                     <Label>月均发<br/>布信息</Label>
-                    <Number>{calcEvg(data.currentYear_fbxxMonthly_cnt)}</Number>
+                    <Num>{calcEvg(data.currentYear_fbxxMonthly_cnt)}</Num>
                 </ReportCol>
                 <ReportCol span={11}>
                     <Label>月均公<br/>示信息</Label>
-                    <Number>{calcEvg(data.currentYear_gsxxMonthly_cnt)}</Number>
+                    <Num>{calcEvg(data.currentYear_gsxxMonthly_cnt)}</Num>
                 </ReportCol>
             </ReportGrid>
             <Tail>
