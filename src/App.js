@@ -34,7 +34,7 @@ function App(props) {
     const [data, setData] = useState(sample.data);
     const [theme, setTheme] = useState('walden');
 
-    const getDashboardData = () => dataClient.getDashboardData()
+    const refreshData = () => dataClient.getDashboardData()
         .then(response => {
             console.log(response);
             setData(response.data.data);
@@ -45,7 +45,8 @@ function App(props) {
         });
 
     useEffect(() => {
-        let interval = setInterval(getDashboardData, 60000);
+        refreshData();
+        let interval = setInterval(refreshData, 60000);
         return ()=>clearInterval(interval);
     }, []);
 
