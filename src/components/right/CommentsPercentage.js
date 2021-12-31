@@ -74,7 +74,7 @@ function CommentsPercentage(props) {
                         {
                             value: all - report.cnt,
                             // name: Number(1),
-                            name: Number(report.cnt / all * 100).toFixed(0) + "%",
+                            name: Number(report.cnt / all * 100).toFixed(1) + "%",
                         }
                     ],
                     radius: ['40%', '70%']
@@ -97,7 +97,7 @@ function CommentsPercentage(props) {
                         },
                         {
                             value: all - suggest.cnt,
-                            name: Number(suggest.cnt / all * 100).toFixed(0) + "%",
+                            name: Number(suggest.cnt / all * 100).toFixed(1) + "%",
                         }
                     ],
                     radius: ['40%', '70%']
@@ -119,7 +119,7 @@ function CommentsPercentage(props) {
                         },
                         {
                             value: all - complaint.cnt,
-                            name: Number(complaint.cnt / all * 100).toFixed(0) + "%",
+                            name: Number(complaint.cnt / all * 100).toFixed(1) + "%",
                         }
                     ],
                     radius: ['40%', '70%']

@@ -87,7 +87,7 @@ function Map(props) {
             backgroundColor: 'transparent',
             tooltip: {
                 show: true,
-                formatter: '{b}<br/>{c} (p / km2)'
+                formatter: '{b}<br/>历史累计{c}条信息'
             },
             series: [
                 {
@@ -98,11 +98,11 @@ function Map(props) {
                         fontSize: "1.1rem"
                     },
                     data: [
-                        {name: '沟赵办事处', itemStyle: {areaColor: '#954ad5', opacity: 0.7}},
-                        {name: '双桥办事处', itemStyle: {areaColor: '#2dffbe', opacity: 0.7}},
-                        {name: '梧桐办事处', itemStyle: {areaColor: '#f0f8ff', opacity: 0.7}},
-                        {name: '枫杨办事处', itemStyle: {areaColor: '#3299ff', opacity: 0.7}},
-                        {name: '石佛办事处', itemStyle: {areaColor: '#0efcff', opacity: 0.7}},
+                        {name: '沟赵办事处',  value: gouzhaoAmount,itemStyle: {areaColor: '#954ad5', opacity: 0.7}},
+                        {name: '双桥办事处', value: shuangqiaoAmount, itemStyle: {areaColor: '#2dffbe', opacity: 0.7}},
+                        {name: '梧桐办事处', value:wutongAmount, itemStyle: {areaColor: '#f0f8ff', opacity: 0.7}},
+                        {name: '枫杨办事处', value:fengyangAmount, itemStyle: {areaColor: '#3299ff', opacity: 0.7}},
+                        {name: '石佛办事处', value:shifoAmount, itemStyle: {areaColor: '#0efcff', opacity: 0.7}},
                     ],
                     markPoint: {
                         symbol: 'circle',

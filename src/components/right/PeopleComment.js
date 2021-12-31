@@ -59,7 +59,7 @@ function PeopleComment(props) {
                 </ReportCol>
 
                 <ReportCol span={11}>
-                    <Label>留言群<br/>众总数</Label>
+                    <Label>留言群<br/>众人数</Label>
                     <Num>{context.currentYear_suggent_person_cnt}</Num>
                 </ReportCol>
                 <ReportCol span={11}>
