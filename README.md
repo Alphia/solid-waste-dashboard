@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## build and docker image
+
+### Build
+Run `npm run build` will get static build files
+
+### docker images
+
+Run `docker build -t alphia/cw:v1.0 .` will get docker image
+
+Run `docker push alphia/cw:v1.0` will push image to docker hub
+
+Run `docker run --name ygcw_dashboard -p 20086:80 -d alphia/cw:v1.0` on deployment machine.
