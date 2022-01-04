@@ -120,35 +120,50 @@ function Map(props) {
                                 y: 245 - deltaHeight(gouzhaoAmount),
                                 value: gouzhaoAmount,
                                 symbolSize: 40 + deltaSize(gouzhaoAmount),
-                                label: {color: '#954ad5'}
+                                label: {color: '#954ad5'},
+                                emphasis:{
+                                    label: {color: '#954ad5'},
+                                }
                             },
                             {
                                 x: 508,
                                 y: 85 - deltaHeight(shuangqiaoAmount),
                                 value: shuangqiaoAmount,
                                 symbolSize: 40 + deltaSize(shuangqiaoAmount),
-                                label: {color: '#0aaf7b'}
+                                label: {color: '#0aaf7b'},
+                                emphasis: {
+                                    label: {color: '#0aaf7b'}
+                                }
                             },
                             {
                                 x: 490,
                                 y: 315 - deltaHeight(wutongAmount),
                                 value: wutongAmount,
                                 symbolSize: 40 + deltaSize(wutongAmount),
-                                label: {color: '#5a6269'}
+                                label: {color: '#5a6269'},
+                                emphasis: {
+                                    label: {color: '#5a6269'},
+                                }
                             },
                             {
                                 x: 570,
                                 y: 190 - deltaHeight(fengyangAmount),
                                 value: fengyangAmount,
                                 symbolSize: 40 + deltaSize(fengyangAmount),
-                                label: {color: '#3299ff'}
+                                label: {color: '#3299ff'},
+                                emphasis: {
+                                    label: {color: '#3299ff'},
+                                }
                             },
                             {
                                 x: 660,
                                 y: 345 - deltaHeight(shifoAmount),
                                 value: shifoAmount,
                                 symbolSize: 40 + deltaSize(shifoAmount),
-                                label: {color: '#02aeb1'}
+                                label: {color: '#02aeb1'},
+                                emphasis: {
+                                    label: {color: '#02aeb1'},
+                                }
                             },
                         ],
                     }
