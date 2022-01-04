@@ -5,6 +5,7 @@ import {Col, Row} from 'antd/lib/index';
 import "antd/dist/antd.css";
 import right from '../../img/right.png'
 import {RightReportHeader} from "../Block";
+import moment from "moment";
 
 const ReportGrid = styled(Row)`
   width: 90%;
@@ -46,7 +47,7 @@ function PeopleComment(props) {
     return (
         <div className={className}>
             <RightReportHeader>
-                2021年群众留言
+                {moment().year()}年群众留言
             </RightReportHeader>
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <ReportCol span={11}>

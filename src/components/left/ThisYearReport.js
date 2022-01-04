@@ -6,6 +6,7 @@ import "antd/dist/antd.css";
 import leftBg from '../../img/left_header2.png';
 import {LeftReportHeader, Tail, TailContent, TailHeader} from "../Block";
 import _ from 'lodash';
+import moment from "moment";
 
 const ReportGrid = styled(Row)`
   width: 90%;
@@ -48,7 +49,7 @@ function ThisYearReport(props) {
     return (
         <div className={className}>
             <LeftReportHeader>
-                2021年信息公示
+                {moment().year()}年信息公示
             </LeftReportHeader>
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <ReportCol span={11}>
@@ -71,7 +72,7 @@ function ThisYearReport(props) {
             <Tail>
                 <TailHeader>说明</TailHeader>
                 <TailContent>
-                    已发布、已公示信息包含各镇、村所发布信息，月平均为已发布平均数，月发布为公示平均数
+                    已发布、已公示信息包含各镇、村所发布信息; 月均发布为当年发布平均数，月均公示为当年公示平均数
                 </TailContent>
             </Tail>
         </div>

@@ -8,6 +8,7 @@ import {Col, Row} from "antd/lib/index";
 import "antd/dist/antd.css";
 import ThemeContext from '../../themes/ThemeContext';
 import _ from 'lodash';
+import moment from "moment";
 
 const LabelGrid = styled(Row)`
   margin-top: -2%;
@@ -136,7 +137,7 @@ function CommentsPercentage(props) {
         <div className={className}>
 
             <RightReportHeader>
-                21年群众留言比例
+                {moment().year()%100}年群众留言比例
             </RightReportHeader>
 
             <ReactECharts
