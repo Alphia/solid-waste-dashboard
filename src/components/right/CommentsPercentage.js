@@ -57,24 +57,26 @@ function CommentsPercentage(props) {
             backgroundColor: 'transparent',
             series: [
                 {
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'center',
-                            fontSize: '1.4rem',
-                            color: '#0efcff',
-                        }
-                    },
                     type: 'pie',
                     right: '62%',
+                    labelLine: {
+                        show: false,
+                    },
                     data: [
                         {
                             value: report.cnt,
+
                         },
                         {
                             value: all - report.cnt,
                             // name: Number(1),
                             name: Number(report.cnt / all * 100).toFixed(1) + "%",
+                            label: {
+                                show: true,
+                                position: 'center',
+                                fontSize: '1.4rem',
+                                color: '#0efcff',
+                            },
                         }
                     ],
                     radius: ['40%', '70%']
@@ -83,13 +85,8 @@ function CommentsPercentage(props) {
                     type: 'pie',
                     right: '31%',
                     left: '31%',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'center',
-                            fontSize: '1.4rem',
-                            color: '#0efcff',
-                        }
+                    labelLine: {
+                        show: false,
                     },
                     data: [
                         {
@@ -98,6 +95,12 @@ function CommentsPercentage(props) {
                         {
                             value: all - suggest.cnt,
                             name: Number(suggest.cnt / all * 100).toFixed(1) + "%",
+                            label: {
+                                show: true,
+                                position: 'center',
+                                fontSize: '1.4rem',
+                                color: '#0efcff',
+                            },
                         }
                     ],
                     radius: ['40%', '70%']
@@ -105,13 +108,8 @@ function CommentsPercentage(props) {
                 {
                     type: 'pie',
                     left: '62%',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'center',
-                            fontSize: '1.4rem',
-                            color: '#0efcff',
-                        }
+                    labelLine: {
+                        show: false,
                     },
                     data: [
                         {
@@ -120,6 +118,12 @@ function CommentsPercentage(props) {
                         {
                             value: all - complaint.cnt,
                             name: Number(complaint.cnt / all * 100).toFixed(1) + "%",
+                            label: {
+                                show: true,
+                                position: 'center',
+                                fontSize: '1.4rem',
+                                color: '#0efcff',
+                            },
                         }
                     ],
                     radius: ['40%', '70%']
