@@ -8,22 +8,22 @@ import {RightReportHeader} from "../Block";
 import moment from "moment";
 
 const ReportGrid = styled(Row)`
-  width: 90%;
-  padding-right: 10%;
-  float: right;
-  height: 80%;
+  width: 93%;
+  margin-top: 2%;
+  padding-left: 7%;
+  float: left;
+  height: 72%;
 `;
 
 const ReportCol = styled(Col)`
   box-sizing: border-box;
   background-color: rgba(14, 252, 255, 0.15);
-  height: 40%;
+  height: 6rem;
   justify-content: center; //子元素水平居中
   align-items: center; //子元素垂直居中
   display: flex;
   border-radius: 9px;
 `;
-
 const Label = styled.div`
   text-align: center;
   color: #fff;

@@ -8,8 +8,8 @@ import {RightReportHeader} from "../Block";
 import _ from 'lodash';
 
 const ReportGrid = styled(Row)`
-  padding-right: 5%;
-  padding-left: 5%;
+  padding-right: 5.5%;
+  padding-left: 4.5%;
   height: 78%;
 `;
 

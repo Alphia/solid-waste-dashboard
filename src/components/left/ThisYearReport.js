@@ -3,22 +3,23 @@ import styled from "styled-components"
 import DataContext from '../../DataContext';
 import {Col, Row} from 'antd/lib/index';
 import "antd/dist/antd.css";
-import leftBg from '../../img/left_header2.png';
-import {LeftReportHeader, Tail, TailContent, TailHeader} from "../Block";
+import left from "../../img/left.png";
+import {LeftReportHeader} from "../Block";
 import _ from 'lodash';
 import moment from "moment";
 
 const ReportGrid = styled(Row)`
-  width: 90%;
-  padding-right: 10%;
+  width: 93%;
+  margin-top: 2%;
+  padding-right: 7%;
   float: right;
-  height: 60%;
+  height: 72%;
 `;
 
 const ReportCol = styled(Col)`
   box-sizing: border-box;
   background-color: rgba(14, 252, 255, 0.15);
-  height: 5.1rem;
+  height: 6rem;
   justify-content: center; //子元素水平居中
   align-items: center; //子元素垂直居中
   display: flex;
@@ -51,7 +52,7 @@ function ThisYearReport(props) {
             <LeftReportHeader>
                 {moment().year()}年信息公示
             </LeftReportHeader>
-            <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
+            <ReportGrid justify="space-around" align="middle" gutter={[12, 12]}>
                 <ReportCol span={11}>
                     <Label>已发布<br/>信息数</Label>
                     <Num>{data.currentyear_fbxx_content_cnt}</Num>
@@ -69,19 +70,12 @@ function ThisYearReport(props) {
                     <Num>{calcEvg(data.currentYear_gsxxMonthly_cnt)}</Num>
                 </ReportCol>
             </ReportGrid>
-            <Tail>
-                <TailHeader>说明</TailHeader>
-                <TailContent>
-                    已发布、已公示信息包含各镇、村所发布信息; 月均发布为当年发布平均数，月均公示为当年公示平均数
-                </TailContent>
-            </Tail>
         </div>
     );
 }
 
 export default styled(ThisYearReport)`
   height: 31.6%;
-  //margin-top: 3%;
-  background: url(${leftBg}) no-repeat;
+  background: url(${left}) no-repeat;
   background-size: 100% 100%;
 `
