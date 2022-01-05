@@ -157,7 +157,7 @@ function Map(props) {
                             },
                             {
                                 x: 660,
-                                y: 345 - deltaHeight(shifoAmount),
+                                y: 360 - deltaHeight(shifoAmount),
                                 value: shifoAmount,
                                 symbolSize: 40 + deltaSize(shifoAmount),
                                 label: {color: '#02aeb1'},
