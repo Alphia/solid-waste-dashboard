@@ -33,8 +33,9 @@ echarts.registerTheme('wonderland', wonderland);
 function App(props) {
     const [data, setData] = useState(sample.data);
     const [theme, setTheme] = useState('walden');
+    const {_config} = props;
 
-    const refreshData = () => dataClient.getDashboardData()
+    const refreshData = () => dataClient.getDashboardData(_config.dataUrl)
         .then(response => {
             console.log(response);
             setData(response.data.data);
