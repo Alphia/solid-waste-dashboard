@@ -37,7 +37,6 @@ function App(props) {
 
     const refreshData = () => dataClient.getDashboardData(_config.dataUrl)
         .then(response => {
-            console.log(response);
             setData(response.data.data);
         })
         .catch(err => {

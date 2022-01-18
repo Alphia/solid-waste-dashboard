@@ -10,7 +10,6 @@ import * as echarts from 'echarts';
 import ThemeContext from "../../themes/ThemeContext";
 import {CloudUploadOutlined, ProfileOutlined, TeamOutlined} from "@ant-design/icons";
 
-console.log(hiTechMap);
 echarts.registerMap('zzHiTech', hiTechMap);
 
 
