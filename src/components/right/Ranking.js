@@ -16,7 +16,7 @@ const ReportGrid = styled(Row)`
 const ReportCol = styled(Col)`
   box-sizing: border-box;
   background-color: rgba(14, 252, 255, 0.15);
-  height: 95%;
+  height: 100%;
   border-radius: 9px;
 `;
 
@@ -121,23 +121,20 @@ function Ranking(props) {
                             <List3>发布数</List3>
                         </div>
                         <MyDivider/>
-                        {_.map(option.ins, ins => {
-                                return (
-                                    <div>
-                                        <List1>
-                                            <CircleNum>{ins.index}</CircleNum>
-                                        </List1>
-                                        <List2>
-                                            <Text>{ins.name}</Text>
-                                        </List2>
-                                        <List3>
-                                            <Text><Num>{ins.amount}</Num></Text>
-                                        </List3>
-                                        <MyDivider/>
-                                    </div>
-                                )
-                            }
-                        )}
+                        {_.chain(option.ins).take(5).map(ins =>
+                            <div>
+                                <List1>
+                                    <CircleNum>{ins.index}</CircleNum>
+                                </List1>
+                                <List2>
+                                    <Text>{ins.name}</Text>
+                                </List2>
+                                <List3>
+                                    <Text><Num>{ins.amount}</Num></Text>
+                                </List3>
+                                <MyDivider/>
+                            </div>
+                        ).value()}
                     </ListWrapper>
                 </ReportCol>
                 <ReportCol span={11}>
@@ -150,7 +147,7 @@ function Ranking(props) {
                             <List3>发布数</List3>
                         </div>
                         <MyDivider/>
-                        {_.map(option.village, village =>
+                        {_.chain(option.village).take(5).map(village =>
                             <>
                                 <List1>
                                     <CircleNum>{village.index}</CircleNum>
@@ -163,7 +160,8 @@ function Ranking(props) {
                                 </List3>
                                 <MyDivider/>
                             </>
-                        )}
+                        ).value()
+                        }
                     </ListWrapper>
                 </ReportCol>
             </ReportGrid>
