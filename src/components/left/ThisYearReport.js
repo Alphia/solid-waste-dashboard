@@ -29,14 +29,14 @@ const ReportCol = styled(Col)`
 const Label = styled.div`
   text-align: center;
   color: #fff;
-  width: 60%;
+  width: 40%;
   font-size: 1.2rem;
 `;
 
 const Num = styled.div`
   text-align: center;
   color: #0efcff;
-  width: 40%;
+  width: 60%;
   font-size: 1.5rem;
   border-left: #02aeb1 1px solid;
 `;
@@ -50,24 +50,25 @@ function ThisYearReport(props) {
     return (
         <div className={className}>
             <LeftReportHeader>
-                {moment().year()}年信息公示
+                {/*{moment().year()}年信息公示*/}
+                产废监管
             </LeftReportHeader>
             <ReportGrid justify="space-around" align="middle" gutter={[12, 12]}>
                 <ReportCol span={11}>
-                    <Label>已发布<br/>信息数</Label>
-                    <Num>{data.currentyear_fbxx_content_cnt}</Num>
+                    <Label>纳管<br/>企业</Label>
+                    <Num>{data.currentyear_fbxx_content_cnt}家</Num>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>已公示<br/>信息数</Label>
-                    <Num>{data.currentyear_gsxx_content_cnt}</Num>
+                    <Label>年度<br/>计划</Label>
+                    <Num>{calcEvg(data.currentYear_fbxxMonthly_cnt)}0万吨</Num>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>月均发<br/>布信息</Label>
-                    <Num>{calcEvg(data.currentYear_fbxxMonthly_cnt)}</Num>
+                    <Label>目前<br/>固废</Label>
+                    <Num>{data.currentyear_gsxx_content_cnt}万吨</Num>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>月均公<br/>示信息</Label>
-                    <Num>{calcEvg(data.currentYear_gsxxMonthly_cnt)}</Num>
+                    <Label>审批<br/>通过</Label>
+                    <Num>{calcEvg(data.currentYear_gsxxMonthly_cnt)}23条</Num>
                 </ReportCol>
             </ReportGrid>
         </div>

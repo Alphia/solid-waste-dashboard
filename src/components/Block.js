@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {Typography} from "antd";
 
 export const LeftReportHeader = styled(Typography)`
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #fff;
     padding-left: 8%;
     padding-top: 0.6rem;
@@ -20,7 +20,7 @@ export const MidReportHeader = styled(Typography)`
 `;
 
 export const RightReportHeader = styled(Typography)`
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #fff;
     padding-left: 63%;
     padding-top: 0.6rem;

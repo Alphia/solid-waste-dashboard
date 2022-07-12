@@ -14,13 +14,18 @@ function Feedback(props) {
     const extractOption = data => {
         let feedback = data.suggentCountGroupByMonthAndType;
         const months = _.chain(feedback.jy).map(e=>e.year_month).map(e=>e.split("/")[1]+"月").value();
-        const suggestSeries = _.chain(feedback.jy).map(e=>e.cnt).value();
-        const consultationSeries = _.chain(feedback.jb).map(e=>e.cnt).value();
-        const complaintSeries = _.chain(feedback.ts).map(e=>e.cnt).value();
+        const series = {
+            jy:[20,30,35,32,50,30,43,33,48,44,28,25],
+            jb:[18,32,30,22,26,22,35,60,55,22,32,33],
+            ts:[15,24,26,28,30,30,33,35,38,38,40,40],
+        }
+        const suggestSeries = series.jy;
+        const consultationSeries = series.jb;
+        const complaintSeries = series.ts;
 
         return {
             title: {
-                text: '12月内群众反馈情况',
+                text: '近12月内产废、转移、处废统计',
                 show: true,
                 textStyle: {
                     color: 'white',
@@ -31,7 +36,7 @@ function Feedback(props) {
             },
             backgroundColor: 'transparent',
             legend: {
-                data: ['建议', '咨询', '投诉'],
+                data: ['产废', '转移', '处废'],
                 left: '70%',
                 top: '10%',
                 textStyle: {
@@ -74,7 +79,7 @@ function Feedback(props) {
             },
             series: [
                 {
-                    name: '建议',
+                    name: '产废',
                     type: 'bar',
                     data: suggestSeries,
                     itemStyle: {
@@ -82,7 +87,7 @@ function Feedback(props) {
                     }
                 },
                 {
-                    name: '咨询',
+                    name: '转移',
                     type: 'bar',
                     data: consultationSeries,
                     itemStyle: {
@@ -90,7 +95,7 @@ function Feedback(props) {
                     }
                 },
                 {
-                    name: '投诉',
+                    name: '处废',
                     type: 'bar',
                     data: complaintSeries,
                     itemStyle: {

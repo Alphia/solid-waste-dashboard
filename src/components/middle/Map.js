@@ -5,12 +5,13 @@ import {Col, Row} from 'antd/lib/index';
 import "antd/dist/antd.css";
 import _ from 'lodash';
 import hiTechMap from '../../map/HiTechMap';
+import yulinMap from '../../map/610800.json';
 import ReactECharts from "echarts-for-react";
 import * as echarts from 'echarts';
 import ThemeContext from "../../themes/ThemeContext";
 import {CloudUploadOutlined, ProfileOutlined, TeamOutlined} from "@ant-design/icons";
 
-echarts.registerMap('zzHiTech', hiTechMap);
+echarts.registerMap('yulinMap', yulinMap);
 
 
 const ReportGrid = styled(Row)`
@@ -32,7 +33,7 @@ const ReportCol = styled(Col)`
 const Icon = styled.div`
   text-align: center;
   color: #a7c0db;
-  width: 5.5rem;
+  width: 4rem;
   font-size: 3.2rem;
   border-radius: 0.8rem 0 0 0;
   margin-left: -4px;
@@ -52,7 +53,7 @@ const Num = styled.div`
   text-align: center;
   color: #0efcff;
   flex-grow: 1;
-  font-size: 2rem;
+  font-size: 1.8rem;
   border-left: #02aeb1 1px solid;
 `;
 
@@ -84,88 +85,36 @@ function Map(props) {
         let shifoAmount = getAmountOfOrg('石佛办事处');
         return {
             backgroundColor: 'transparent',
-            tooltip: {
-                show: true,
-                formatter: '{b}<br/>历史累计{c}条信息'
-            },
             series: [
                 {
                     type: 'map',
-                    map: 'zzHiTech',
+                    map: 'yulinMap',
+                    zoom: 1.2,
+                    top: 40,
                     label: {
                         show: true,
-                        fontSize: "1.1rem"
+                        fontSize: "1.1rem",
+                        formatter: '{b}\n{c}万吨'
                     },
                     data: [
-                        {name: '沟赵办事处',  value: gouzhaoAmount,itemStyle: {areaColor: '#954ad5', opacity: 0.7}},
-                        {name: '双桥办事处', value: shuangqiaoAmount, itemStyle: {areaColor: '#2dffbe', opacity: 0.7}},
-                        {name: '梧桐办事处', value:wutongAmount, itemStyle: {areaColor: '#f0f8ff', opacity: 0.7}},
-                        {name: '枫杨办事处', value:fengyangAmount, itemStyle: {areaColor: '#3299ff', opacity: 0.7}},
-                        {name: '石佛办事处', value:shifoAmount, itemStyle: {areaColor: '#0efcff', opacity: 0.7}},
-                    ],
-                    markPoint: {
-                        symbol: 'circle',
-                        symbolSize: 40,
-                        label: {
-                            fontSize: '1.1rem',
+                        {name: '定边县', value: 55, itemStyle: {areaColor: '#75588d', opacity: 0.7}},
+                        {name: '府谷县', value: '73', itemStyle: {areaColor: '#2dffbe', opacity: 0.7}},
+                        {name: '横山县', value: '37', itemStyle: {areaColor: '#f0f8ff', opacity: 0.7}},
+                        {name: '佳县', value: '32', itemStyle: {areaColor: '#2876c3', opacity: 0.7}},
+                        {name: '靖边县', value: '46', itemStyle: {areaColor: '#3da5a6', opacity: 0.7}},
+                        {name: '米脂县', value: '17', itemStyle: {areaColor: '#27b268', opacity: 0.7}},
+                        {name: '神木县', value: '116', itemStyle: {areaColor: '#ada584', opacity: 0.7}},
+                        {name: '清涧县', value: '14', itemStyle: {areaColor: '#10d099', opacity: 0.7}},
+                        {name: '绥德县', value: '23', itemStyle: {areaColor: '#405c9d', opacity: 0.7}},
+                        {
+                            name: '吴堡县',
+                            value: '8',
+                            labelLine: {show: true},
+                            itemStyle: {areaColor: '#a36c9e', opacity: 0.7}
                         },
-                        itemStyle: {
-                            color: '#fff',
-                            opacity: 1,
-                        },
-                        data: [
-                            {
-                                x: 255,
-                                y: 245 - deltaHeight(gouzhaoAmount),
-                                value: gouzhaoAmount,
-                                symbolSize: 40 + deltaSize(gouzhaoAmount),
-                                label: {color: '#954ad5'},
-                                emphasis:{
-                                    label: {color: '#954ad5'},
-                                }
-                            },
-                            {
-                                x: 508,
-                                y: 85 - deltaHeight(shuangqiaoAmount),
-                                value: shuangqiaoAmount,
-                                symbolSize: 40 + deltaSize(shuangqiaoAmount),
-                                label: {color: '#0aaf7b'},
-                                emphasis: {
-                                    label: {color: '#0aaf7b'}
-                                }
-                            },
-                            {
-                                x: 490,
-                                y: 315 - deltaHeight(wutongAmount),
-                                value: wutongAmount,
-                                symbolSize: 40 + deltaSize(wutongAmount),
-                                label: {color: '#5a6269'},
-                                emphasis: {
-                                    label: {color: '#5a6269'},
-                                }
-                            },
-                            {
-                                x: 570,
-                                y: 190 - deltaHeight(fengyangAmount),
-                                value: fengyangAmount,
-                                symbolSize: 40 + deltaSize(fengyangAmount),
-                                label: {color: '#3299ff'},
-                                emphasis: {
-                                    label: {color: '#3299ff'},
-                                }
-                            },
-                            {
-                                x: 660,
-                                y: 360 - deltaHeight(shifoAmount),
-                                value: shifoAmount,
-                                symbolSize: 40 + deltaSize(shifoAmount),
-                                label: {color: '#02aeb1'},
-                                emphasis: {
-                                    label: {color: '#02aeb1'},
-                                }
-                            },
-                        ],
-                    }
+                        {name: '榆阳区', value: '92', itemStyle: {areaColor: '#ad8f7d', opacity: 0.7}},
+                        {name: '子洲县', value: '14', itemStyle: {areaColor: '#ebbd9e', opacity: 0.7}},
+                    ]
                 }
             ]
         };
@@ -177,20 +126,20 @@ function Map(props) {
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <ReportCol span={6}>
                     <Icon><ProfileOutlined/></Icon>
-                    <Num>{data.total_content_cnt}</Num>
+                    <Num>{data.total_content_cnt}万吨</Num>
                     {/*<Number>{99999}</Number>*/}
-                    <Des>累计信息总数</Des>
+                    <Des>历史累计产废</Des>
                 </ReportCol>
                 <ReportCol span={6}>
                     <Icon><CloudUploadOutlined/></Icon>
-                    <Num>{data.total_gsxx_content_cnt}</Num>
-                    <Des>已公示信息数</Des>
+                    <Num>{data.total_gsxx_content_cnt}万吨</Num>
+                    <Des>历史累计转移</Des>
                 </ReportCol>
 
                 <ReportCol span={6}>
                     <Icon><TeamOutlined/></Icon>
-                    <Num>{data.total_suggent_cnt}</Num>
-                    <Des>群众留言总数</Des>
+                    <Num>{data.total_suggent_cnt}人</Num>
+                    <Des>累计执法处罚</Des>
                 </ReportCol>
             </ReportGrid>
             <ReactECharts

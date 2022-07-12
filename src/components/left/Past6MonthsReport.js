@@ -25,7 +25,7 @@ function Past6MonthsReport(props) {
                 trigger: 'axis'
             },
             legend: {
-                data: ['已发布信息', '已公示信息'],
+                data: ['转移申请', '审批通过'],
                 right: 50,
                 top: -5,
             },
@@ -65,14 +65,14 @@ function Past6MonthsReport(props) {
             },
             series: [
                 {
-                    name: '已发布信息',
+                    name: '转移申请',
                     type: 'line',
                     stack: '已发布',
                     smooth: true,
                     data: releasedSeries,
                 },
                 {
-                    name: '已公示信息',
+                    name: '审批通过',
                     type: 'line',
                     stack: '已公示',
                     smooth: true,
@@ -87,7 +87,7 @@ function Past6MonthsReport(props) {
         <div className={className}>
 
             <LeftReportHeader>
-                半年内公示情况
+                月度增量
             </LeftReportHeader>
 
             <ReactECharts

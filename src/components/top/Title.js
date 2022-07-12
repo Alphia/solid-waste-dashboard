@@ -6,7 +6,7 @@ export const Title = styled((props) => {
     const {className} = props;
     return (
         <div className={className}>
-            郑州高新区阳光村务数据监控平台
+            工业固废智能化动态监测管控平台
         </div>
     )
 })`

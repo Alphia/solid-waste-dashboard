@@ -27,14 +27,14 @@ const ReportCol = styled(Col)`
 const Label = styled.div`
   text-align: center;
   color: #fff;
-  width: 60%;
+  width: 40%;
   font-size: 1.2rem;
 `;
 
 const Num = styled.div`
   text-align: center;
   color: #0efcff;
-  width: 40%;
+  width: 60%;
   font-size: 1.5rem;
   border-left: #02aeb1 1px solid;
 `;
@@ -47,25 +47,26 @@ function PeopleComment(props) {
     return (
         <div className={className}>
             <RightReportHeader>
-                {moment().year()}年群众留言
+                {/*{moment().year()}年群众留言*/}
+                转移监管
             </RightReportHeader>
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <ReportCol span={11}>
-                    <Label>群众留<br/>言总数</Label>
-                    <Num>{context.currentYear_suggent_cnt}</Num>
+                    <Label>运输<br/>公司</Label>
+                    <Num>18家</Num>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>已回复<br/>留言数</Label>
-                    <Num>{context.currentYear_suggent_response_cnt}</Num>
+                    <Label>司机<br/>人数</Label>
+                    <Num>328人</Num>
                 </ReportCol>
 
                 <ReportCol span={11}>
-                    <Label>留言群<br/>众人数</Label>
-                    <Num>{context.currentYear_suggent_person_cnt}</Num>
+                    <Label>执法<br/>次数</Label>
+                    <Num>172次</Num>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>留言<br/>回复率</Label>
-                    <Num>{Number((context.currentYear_suggent_response_cnt / context.currentYear_suggent_cnt) * 100).toFixed(0) + "%"}</Num>
+                    <Label>处罚<br/>人次</Label>
+                    <Num>76人</Num>
                 </ReportCol>
             </ReportGrid>
         </div>

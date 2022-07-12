@@ -13,9 +13,33 @@ function Distribution(props) {
     const data = React.useContext(DataContext);
     const theme = React.useContext(ThemeContext);
 
-    const values = _.map(data.currentYear_gsxxGroupBycategory_cnt, e => e.cnt);
+    const dataValues =
+    [
+        {
+            "category_id": "61a81f8e6f523c20983a3fd6",
+            "cnt": 109,
+            "title": "煤矸石"
+        },
+        {
+            "category_id": "61a8204e6f523c20983a3fdb",
+            "cnt": 50,
+            "title": "选废矿石"
+        },
+        {
+            "category_id": "61a8204e6f523c20983a3fdb",
+            "cnt": 20,
+            "title": "页岩灰"
+        },
+        {
+            "category_id": "61a81fc66f523c20983a3fd7",
+            "cnt": 62,
+            "title": "煤灰"
+        }
+    ]
+
+    const values = _.map(dataValues, e => e.cnt);
     const max = _.max(values);
-    const indicator = _.map(data.currentYear_gsxxGroupBycategory_cnt, e => {
+    const indicator = _.map(dataValues, e => {
         return {name: e.title, max: max}
     });
     const extractOption = data => {
@@ -55,7 +79,7 @@ function Distribution(props) {
         <div className={className}>
 
             <LeftReportHeader>
-                信息公示分布
+                固废类型
             </LeftReportHeader>
 
             <ReactECharts

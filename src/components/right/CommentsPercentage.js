@@ -137,7 +137,7 @@ function CommentsPercentage(props) {
         <div className={className}>
 
             <RightReportHeader>
-                {moment().year()%100}年群众留言比例
+                处废占比
             </RightReportHeader>
 
             <ReactECharts
@@ -148,16 +148,16 @@ function CommentsPercentage(props) {
             />
             <LabelGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <LabelCol span={7}>
-                    <Label>咨询</Label>
-                    <Num>{report.cnt}</Num>
+                    <Label>填埋</Label>
+                    <Num>{report.cnt}万吨</Num>
                 </LabelCol>
                 <LabelCol span={7}>
-                    <Label>建议</Label>
-                    <Num>{suggest.cnt}</Num>
+                    <Label>焚烧</Label>
+                    <Num>{suggest.cnt}万吨</Num>
                 </LabelCol>
                 <LabelCol span={7}>
-                    <Label>投诉</Label>
-                    <Num>{complaint.cnt}</Num>
+                    <Label>回收</Label>
+                    <Num>{complaint.cnt}万吨</Num>
                 </LabelCol>
             </LabelGrid>
         </div>

@@ -80,8 +80,36 @@ function Ranking(props) {
     const context = React.useContext(DataContext);
 
     const extractOption = context => {
-        const rankingByL1 = context.currentyear_aticleCountGroupByOrg_L1;
-        const rankingByL2 = context.currentyear_aticleCountGroupByOrg_L2;
+        const rankingByL1 = [
+            {
+                "cnt": 68,
+                "org_name": "大柳塔煤矿",
+            },
+            {
+                "cnt": 84,
+                "org_name": "活鸡兔煤矿",
+            },
+            {
+                "cnt": 57,
+                "org_name": "榆家梁煤矿",
+            },
+            {
+                "cnt": 131,
+                "org_name": "大砭窑煤矿",
+            },
+            {
+                "cnt": 47,
+                "org_name": "红柳林煤矿",
+            }
+        ];
+
+        const rankingByL2 = [
+            {cnt: 228, org_name: "国源环保"},
+            {cnt: 112, org_name: "环化再生",},
+            {cnt: 96, org_name: "恒益固废",},
+            {cnt: 68, org_name: "汇捷固废",},
+            {cnt: 60, org_name: "德泽固废",}
+        ];
 
         const insList = _.chain(rankingByL1)
             .sortBy('cnt')
@@ -108,17 +136,17 @@ function Ranking(props) {
     return (
         <div className={className}>
             <RightReportHeader>
-                地区信息发布排名
+                企业排名
             </RightReportHeader>
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <ReportCol span={11}>
-                    <Label>办事处排名</Label>
+                    <Label>产废企业</Label>
                     <MyDivider/>
                     <ListWrapper>
                         <div>
                             <List1>序号</List1>
                             <List2>名称</List2>
-                            <List3>发布数</List3>
+                            <List3>万吨</List3>
                         </div>
                         <MyDivider/>
                         {_.chain(option.ins).take(5).map(ins =>
@@ -138,13 +166,13 @@ function Ranking(props) {
                     </ListWrapper>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>行政村排名</Label>
+                    <Label>处废企业</Label>
                     <MyDivider/>
                     <ListWrapper>
                         <div>
                             <List1>序号</List1>
                             <List2>名称</List2>
-                            <List3>发布数</List3>
+                            <List3>万吨</List3>
                         </div>
                         <MyDivider/>
                         {_.chain(option.village).take(5).map(village =>
