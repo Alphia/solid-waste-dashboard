@@ -17,18 +17,15 @@ function Past6MonthsReport(props) {
         const releasedPost = data.currentYear_fbxxMonthly_cnt;
 
         const months = _.chain(publicPost).map(e=>e.yearmonth).map(e=>e.split("/")[1]+"月").value();
-        // const publicSeries = _.chain(publicPost).map(e=>e.cnt).value();
-        // const releasedSeries = _.chain(releasedPost).map(e=>e.cnt).value();
-        const publicSeries = [25,32,34,50,35,39];
-        const releasedSeries = [30,38,40,42,40,39].map(e=>e*2/3);
-
+        const publicSeries = _.chain(publicPost).map(e=>e.cnt).value();
+        const releasedSeries = _.chain(releasedPost).map(e=>e.cnt).value();
 
         return {
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data: ['计划申报', '审批通过'],
+                data: ['转移申请', '审批通过'],
                 right: 50,
                 top: -5,
             },
@@ -68,20 +65,18 @@ function Past6MonthsReport(props) {
             },
             series: [
                 {
-                    name: '计划申报',
-                    type: 'line',
-                    stack: '已公示',
-                    smooth: true,
-                    data: publicSeries,
-                    areaStyle: {}
-                },
-                {
-                    name: '审批通过',
+                    name: '转移申请',
                     type: 'line',
                     stack: '已发布',
                     smooth: true,
                     data: releasedSeries,
-                    areaStyle: {}
+                },
+                {
+                    name: '审批通过',
+                    type: 'line',
+                    stack: '已公示',
+                    smooth: true,
+                    data: publicSeries,
                 }
             ]
         };
@@ -92,7 +87,7 @@ function Past6MonthsReport(props) {
         <div className={className}>
 
             <LeftReportHeader>
-                产废计划
+                转移计划
             </LeftReportHeader>
 
             <ReactECharts

@@ -131,15 +131,15 @@ function Map(props) {
                     <Des>历史累计产废</Des>
                 </ReportCol>
                 <ReportCol span={6}>
-                    <Icon><CloudUploadOutlined/></Icon>
-                    <Num>{data.total_gsxx_content_cnt}万吨</Num>
-                    <Des>历史累计转移</Des>
+                    <Icon><ProfileOutlined/></Icon>
+                    <Num>123万吨</Num>
+                    <Des>22年累计产废</Des>
                 </ReportCol>
 
                 <ReportCol span={6}>
-                    <Icon><TeamOutlined/></Icon>
-                    <Num>{data.total_suggent_cnt}人</Num>
-                    <Des>累计执法处罚</Des>
+                    <Icon><ProfileOutlined/></Icon>
+                    <Num>22万吨</Num>
+                    <Des>当月累计产废</Des>
                 </ReportCol>
             </ReportGrid>
             <ReactECharts

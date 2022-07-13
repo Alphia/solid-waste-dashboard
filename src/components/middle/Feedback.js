@@ -17,7 +17,6 @@ function Feedback(props) {
         const series = {
             jy:[20,30,35,32,50,30,43,33,48,44,28,25],
             jb:[18,32,30,22,26,22,35,60,55,22,32,33],
-            ts:[15,24,26,28,30,30,33,35,38,38,40,40],
         }
         const suggestSeries = series.jy;
         const consultationSeries = series.jb;
@@ -25,7 +24,7 @@ function Feedback(props) {
 
         return {
             title: {
-                text: '近12月内产废、转移、处废统计',
+                text: '年内入库、出库量（万吨）',
                 show: true,
                 textStyle: {
                     color: 'white',
@@ -36,7 +35,7 @@ function Feedback(props) {
             },
             backgroundColor: 'transparent',
             legend: {
-                data: ['产废', '转移', '处废'],
+                data: ['入库', '出库',],
                 left: '70%',
                 top: '10%',
                 textStyle: {

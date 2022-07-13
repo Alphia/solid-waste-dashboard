@@ -48,25 +48,25 @@ function PeopleComment(props) {
         <div className={className}>
             <RightReportHeader>
                 {/*{moment().year()}年群众留言*/}
-                转移监管
+                出库统计
             </RightReportHeader>
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
                 <ReportCol span={11}>
-                    <Label>运输<br/>公司</Label>
-                    <Num>18家</Num>
+                    <Label>当年出<br/>库车次</Label>
+                    <Num>40273次</Num>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>司机<br/>人数</Label>
-                    <Num>328人</Num>
+                    <Label>平均每<br/>次出库</Label>
+                    <Num>32.74吨</Num>
                 </ReportCol>
 
                 <ReportCol span={11}>
-                    <Label>执法<br/>次数</Label>
-                    <Num>172次</Num>
+                    <Label>平均每<br/>日出库</Label>
+                    <Num>276次</Num>
                 </ReportCol>
                 <ReportCol span={11}>
-                    <Label>处罚<br/>人次</Label>
-                    <Num>76人</Num>
+                    <Label>单日最<br/>多出库</Label>
+                    <Num>482次</Num>
                 </ReportCol>
             </ReportGrid>
         </div>

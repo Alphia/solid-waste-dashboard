@@ -24,7 +24,7 @@ const Label = styled.div`
   padding-top: 0.5rem;
   text-align: center;
   color: #fff;
-  width: 60%;
+  width: 100%;
   font-size: 1rem;
   border-right: #61dafb 1px;
 `;
@@ -139,7 +139,7 @@ function Ranking(props) {
                 企业排名
             </RightReportHeader>
             <ReportGrid justify="space-around" align="middle" gutter={[8, 8]}>
-                <ReportCol span={11}>
+                <ReportCol span={22}>
                     <Label>产废企业</Label>
                     <MyDivider/>
                     <ListWrapper>
@@ -163,33 +163,6 @@ function Ranking(props) {
                                 <MyDivider/>
                             </div>
                         ).value()}
-                    </ListWrapper>
-                </ReportCol>
-                <ReportCol span={11}>
-                    <Label>处废企业</Label>
-                    <MyDivider/>
-                    <ListWrapper>
-                        <div>
-                            <List1>序号</List1>
-                            <List2>名称</List2>
-                            <List3>万吨</List3>
-                        </div>
-                        <MyDivider/>
-                        {_.chain(option.village).take(5).map(village =>
-                            <>
-                                <List1>
-                                    <CircleNum>{village.index}</CircleNum>
-                                </List1>
-                                <List2>
-                                    <Text>{village.name}</Text>
-                                </List2>
-                                <List3>
-                                    <Text><Num>{village.amount}</Num></Text>
-                                </List3>
-                                <MyDivider/>
-                            </>
-                        ).value()
-                        }
                     </ListWrapper>
                 </ReportCol>
             </ReportGrid>
