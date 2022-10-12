@@ -1,3 +1,4 @@
 var config = {
-    dataUrl: "http://ygcw.zzgx.gov.cn/api/getDashboardData"
+    //cannot access on browser side due to CORS.
+    dataUrl: "http://ygcw.zzgx.gov.cn/dashboard/data.do"
 }
