@@ -37,7 +37,8 @@ function App(props) {
 
     const refreshData = () => dataClient.getDashboardData(_config.dataUrl)
         .then(response => {
-            setData(response.data.data);
+            // use static data for showcase.
+            setData(response.data);
         })
         .catch(err => {
             console.log("当前与后端服务的网络连接有误，请检查后再执行");
